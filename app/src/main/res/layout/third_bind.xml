@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1"
+    android:orientation="vertical" >
+
+     <RelativeLayout 
+         android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="30dip"
+            android:layout_marginTop="10dip"
+            android:background="#F6F6F6">
+        
+       <TextView 
+             android:layout_width="wrap_content"         
+             android:layout_height="wrap_content"           
+             android:layout_centerInParent="true"  
+             android:gravity="center"       
+             android:text="@string/third_bind"       
+             android:textSize="20sp" 
+             android:textColor="#7A7A7A" />
+       
+       <TextView
+             android:id="@+id/third_bind_quit"
+             android:layout_width="wrap_content"   
+             android:layout_height="wrap_content" 
+             android:layout_marginLeft="10dip"  
+             android:background="@drawable/back_icon" />
+    </RelativeLayout>
+        <!--新浪微博 -->
+        <LinearLayout 
+            android:id="@+id/third_sinabind"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginTop="10dip"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:gravity="right|center"
+                android:drawableLeft="@drawable/sina_weibo"
+                android:text="@string/third_sina"
+                android:textSize="15sp"/>
+            <TextView 
+                android:id="@+id/third_sinanickname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right|center"
+                android:layout_marginRight="10dip"
+                android:text="@string/third_unbind"
+                android:textSize="15sp"
+                android:drawableRight="@drawable/right_arrow"/>
+        </LinearLayout>
+        
+       <!--腾讯微博 -->
+        <LinearLayout 
+            android:id="@+id/third_wxbind"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginTop="2dip"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:gravity="right|center_vertical"
+                android:drawableLeft="@drawable/third_weixin"
+                android:text="@string/third_weixin"
+                android:textSize="15sp"/>
+            <TextView 
+                android:id="@+id/third_wxnickname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="10dip"
+                android:text="@string/third_unbind"
+                android:textSize="15sp"
+                android:drawableRight="@drawable/right_arrow"/>
+        </LinearLayout>
+        
+       <!--QQ空间 -->
+        <LinearLayout 
+            android:id="@+id/third_qqbind"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginTop="2dip"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:gravity="right|center_vertical"
+                android:drawableLeft="@drawable/third_qq"
+                android:text="@string/third_qq"
+                android:textSize="15sp"/>
+            <TextView 
+                android:id="@+id/third_qqnickname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="10dip"
+                android:text="@string/third_unbind"
+                android:textSize="15sp"
+                android:drawableRight="@drawable/right_arrow"/>
+        </LinearLayout>
+</LinearLayout>

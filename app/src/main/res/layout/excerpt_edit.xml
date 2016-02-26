@@ -1,0 +1,146 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/top_bar" >
+
+        <ImageView
+            android:id="@+id/excerpt_edit_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/top_pressed"
+            android:clickable="true"
+            android:src="@drawable/top_fanhui" />
+        <TextView android:id="@+id/tv_edit_save"
+            android:layout_width="50dip"
+            android:layout_height="fill_parent"
+            android:text="保存"
+            android:clickable="true"
+            android:gravity="center"
+           android:layout_toRightOf="@id/excerpt_edit_back"
+        android:layout_marginLeft="150dip"
+            android:textColor="@android:color/white"/>
+
+        <ImageView
+            android:id="@+id/excerpt_edit_finish"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/excerpt_edit_finish"
+            android:clickable="true" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/relativeLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/relativeLayout01" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout03" 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+	        <TextView
+	            android:id="@+id/excerpt_edit_time"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="20dp"
+	            android:textColor="@color/main_text"
+	            android:textSize="15sp"
+	            android:text="2014-07-14 17:12:96" />
+	        
+	        <ImageView
+	            android:id="@+id/excerpt_edit_share"
+	            android:layout_width="30dp"
+	            android:layout_height="30dp"
+	            android:layout_centerVertical="true"
+	            android:layout_toRightOf="@+id/excerpt_edit_time"
+	            android:layout_marginTop="15dp"
+	            android:layout_marginBottom="15dp"
+	            android:layout_marginLeft="15dp"
+	            android:clickable="true"
+	            android:src="@drawable/excerpt_edit_share" />
+	        
+	        <TextView
+                android:id="@+id/excerpt_edit_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text=""
+                android:textColor="@color/main_text"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout03"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/main_line" />
+        
+        <EditText
+            android:id="@+id/excerpt_edit_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:singleLine="true"
+            android:hint="标题"
+            android:textColorHint="@color/lightgray"
+            android:text=""
+            android:textColor="@color/edit_text"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+        
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/excerpt_edit_title"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/main_line" />
+        
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/imageView2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+            
+	        <EditText
+	            android:id="@+id/excerpt_edit_content"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:background="@null"
+	            android:gravity="top"
+	            android:hint="内容"
+	            android:textColorHint="@color/lightgray"
+	            android:text=""
+	            android:textColor="@color/edit_text"
+	            android:textSize="18sp" />
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

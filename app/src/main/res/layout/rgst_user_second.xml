@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/rgst_user_title" />
+    
+    <TextView 
+        android:id="@+id/rgst_getphone"
+        android:layout_width="match_parent"
+        android:layout_height="30dip"
+        android:layout_marginTop="40dip"
+        android:gravity="center"
+        android:text="@string/resetpwd_doc"
+        android:textColor="#393939"
+        android:textSize="15sp"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+        <com.hanvon.util.ClearEditText
+                android:id="@+id/regist_user_getcode"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:background="#FFFFFF"
+                android:hint="@string/auth_code"
+                android:singleLine="true"
+                android:drawableRight="@drawable/login_skip"
+                android:maxLength="6"
+                android:textColor="#D7D7D7"
+                android:textColorHint="#D7D7D7"
+                android:textSize="15sp" 
+                android:imeOptions="actionDone" >
+            </com.hanvon.util.ClearEditText>
+        </LinearLayout>
+   
+           <Button
+                android:id="@+id/rgst_getcode_ensure"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/regist_buntton"/>
+           
+   <!--         
+           <Button
+                android:id="@+id/rgst_getcode_time"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="20dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:background="#C9C9C9"
+                android:text="@string/rmb_time"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+-->
+</LinearLayout>

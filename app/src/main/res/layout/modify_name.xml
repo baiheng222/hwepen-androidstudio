@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1"
+    android:orientation="vertical" >
+
+    <include layout="@layout/modify_name_title" />
+
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dip"
+        android:layout_marginLeft="10dip"
+        android:text="@string/modify_name"
+        android:textSize="15sp"
+        android:textColor="#BCBCBC" />
+
+     <LinearLayout 
+        android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dip"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+		 <com.hanvon.util.ClearEditText
+                android:id="@+id/modify_username"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:background="#FFFFFF"
+                android:hint="@string/modify_name"
+                android:singleLine="true"
+                android:drawableRight="@drawable/login_skip"
+                android:maxLength="32"
+                android:textColor="#D7D7D7"
+                android:textColorHint="#D7D7D7"
+                android:textSize="15sp" 
+                android:imeOptions="actionDone" >
+            </com.hanvon.util.ClearEditText>
+       </LinearLayout>
+
+     <TextView
+                android:id="@+id/modify_username_ensure"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:gravity="center"
+                android:layout_marginTop="150dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="#3B8D8D"
+                android:text="确定"
+                android:textSize="15sp"
+                android:textColor="@color/white"/>
+
+</RelativeLayout>

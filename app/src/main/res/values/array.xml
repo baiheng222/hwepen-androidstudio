@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="SlidingMenu">
+        <attr name="mode">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="viewAbove" format="reference" />
+        <attr name="viewBehind" format="reference" />
+        <attr name="behindOffset" format="dimension" />
+        <attr name="behindWidth" format="dimension" />
+        <attr name="behindScrollScale" format="float" />
+        <attr name="touchModeAbove">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+        </attr>
+        <attr name="touchModeBehind">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+        </attr>
+        <attr name="shadowDrawable" format="reference" />
+        <attr name="shadowWidth" format="dimension" />
+        <attr name="fadeEnabled" format="boolean" />
+        <attr name="fadeDegree" format="float" />
+        <attr name="selectorEnabled" format="boolean" />
+        <attr name="selectorDrawable" format="reference" />
+    </declare-styleable>
+    
+    
+    <string-array name="epen_func_key">
+        <item >无</item>
+        <item >换行</item>
+        <item >插入空格</item>
+        <item >退格</item>
+    </string-array>
+    <string-array name="epen_ident_core">
+        <!-- <item >中英文</item>  -->
+        <item >中文</item>
+        <item >英文</item>
+        <!-- <item >日文</item>
+        <item >韩文</item> -->
+    </string-array>
+    <string-array name="epen_sleep_time">
+        <item >2分钟</item>
+        <item >5分钟</item>
+        <item >10分钟</item>
+        <item >从不</item>
+    </string-array>
+    <string-array name="epen_close_time">
+        <item >0.5小时</item>
+        <item > 1小时</item>
+        <item >1.5小时</item>
+        <item >2小时</item>
+    </string-array>
+    
+    <string-array name="epen_scan_dir">
+        <item >横向扫描</item>
+        <item >竖向扫描</item>
+    </string-array>
+    
+        <string-array name="language_type_items">
+        <item>中文</item>
+        <item>英语</item>
+        <item>日语</item>
+        <item>韩语</item>
+        <item>西班牙语</item>
+        <item>法语</item>
+        <item>泰语</item>
+        <item>俄罗斯语</item>
+        <item>葡萄牙语</item>
+        <item>自动检测</item>
+        <item>德语</item>
+        <item>意大利语</item>
+    </string-array>
+       <string-array name="language_translate_type_items">
+        <item>zh</item>
+        <item>en</item>
+        <item>jp</item>
+        <item>kor</item>
+        <item>spa</item>
+        <item>fra</item>
+        <item>th</item>
+        <item>ru</item>
+        <item>pt</item>
+        <item>auto</item>
+        <item>de</item>
+        <item>it</item>
+    </string-array>
+</resources>

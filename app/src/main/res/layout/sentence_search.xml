@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/dd"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_heigth"
+        android:background="@drawable/top" >
+
+        <ImageView
+            android:id="@+id/sentence_epen"
+            android:layout_width="@dimen/top_title_width"
+            android:layout_height="@dimen/top_title_heigth"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/description"
+            android:src="@drawable/epen" />
+
+        <ImageButton
+            android:id="@+id/sentence_search_back"
+            android:layout_width="@dimen/top_back_width"
+            android:layout_height="@dimen/top_back_heigth"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/top_mLeft"
+            android:contentDescription="@string/description"
+            android:background="@drawable/back" />
+        
+        <ImageButton
+            android:id="@+id/sentence_search_home"
+            android:layout_width="@dimen/top_home_width"
+            android:layout_height="@dimen/top_home_heigth"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/top_mRight"
+            android:contentDescription="@string/description"
+            android:background="@drawable/shouye" />
+    </RelativeLayout>
+	
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/search_height"
+        android:background="@drawable/ss" >
+
+        <ImageView
+            android:id="@+id/sentence_search"
+            android:layout_width="@dimen/search_search_widht"
+            android:layout_height="@dimen/search_search_height"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/search_search_mLeft"
+            android:layout_marginTop="@dimen/search_search_mTop"
+            android:src="@drawable/s"
+            android:contentDescription="@string/description"/>
+
+        <EditText
+            android:id="@+id/sentence_search_text"
+            android:layout_width="@dimen/search_text_width"
+            android:layout_height="@dimen/search_text_hight"
+            android:layout_toRightOf="@+id/sentence_search"
+            android:layout_marginTop="@dimen/search_text_mTop"
+            android:layout_marginLeft="@dimen/search_text_mLeft"
+            android:hint="@string/search"
+            android:textColor="@color/gray"
+            android:background="@null"
+            android:textSize="@dimen/fontMiddleSize"
+            android:inputType="text" >
+
+        </EditText>
+        
+        <ImageView
+            android:id="@+id/sentence_search_clear"
+            android:layout_width="@dimen/search_search_widht"
+            android:layout_height="@dimen/search_search_height"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/search_clear_mRight"
+            android:layout_marginTop="@dimen/search_clear_mTop"
+            android:src="@drawable/t"
+            android:contentDescription="@string/description"/>
+        
+	</RelativeLayout>
+    
+</LinearLayout>

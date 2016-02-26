@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/welcome" >
+    
+    <RelativeLayout
+        android:id="@+id/relativeLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/top_bar" >
+
+        <ImageView
+            android:id="@+id/register_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/top_pressed"
+            android:clickable="true"
+            android:src="@drawable/top_fanhui" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/relativeLayout01"
+        android:layout_marginTop="100dp" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/register_text_bk"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/register_username"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:hint="用户名"
+                android:textColorHint="@color/lightgray"
+                android:inputType="textPersonName"
+                android:textSize="18sp" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/register_text_bk"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/register_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:hint="密码"
+                android:textColorHint="@color/lightgray"
+                android:inputType="textPassword"
+                android:textSize="18sp" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/register_text_bk"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/register_password_confirm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:hint="再次确认密码"
+                android:textColorHint="@color/lightgray"
+                android:inputType="textPassword"
+                android:textSize="18sp" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/register_text_bk"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/register_mail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:hint="邮箱"
+                android:textColorHint="@color/lightgray"
+                android:inputType="textEmailAddress"
+                android:textSize="18sp" >
+            </EditText>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout4"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:src="@drawable/register_bk" />
+    </RelativeLayout>
+
+</RelativeLayout>

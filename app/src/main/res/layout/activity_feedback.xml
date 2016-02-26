@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:background="#f6f6f6" >
+
+        <ImageView
+            android:id="@+id/iv_feedback_backbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/tv_title_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/title_feedback"
+            android:textColor="#4d4d4d"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_feedback_thanks"
+        android:layout_width="fill_parent"
+        android:layout_height="300dip"
+        android:layout_below="@id/rl_title"
+        android:layout_marginTop="100dip"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/iv_aboutus_logo"
+            android:layout_width="150dip"
+            android:layout_height="130dip"
+            android:background="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/tvVersionName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dip"
+            android:text="version"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:gravity="center"
+            android:padding="10dip"
+            android:text="@string/feedback_thanks"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_feedback_conten"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_title"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#e1e1e1"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:text="@string/feedback_tip_question"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/et_feedback_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@null"
+            android:gravity="left|top"
+            android:hint="@string/feedback_tip_inputs_question"
+            android:imeOptions="actionNext"
+            android:maxLines="5"
+            android:minLines="5"
+            android:paddingLeft="10dp"
+            android:textColor="#191919"
+            android:textSize="18dp" >
+        </EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#e1e1e1"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:text="@string/feedback_tip_email"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/et_feedback_email"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@null"
+            android:gravity="left|top"
+            android:hint="@string/feedback_tip_inputs_email"
+            android:imeOptions="actionNext"
+            android:maxLines="5"
+            android:minLines="5"
+            android:paddingLeft="10dp"
+            android:textColor="#191919"
+            android:textSize="18dp" >
+        </EditText>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2" >
+
+            <TextView
+                android:id="@+id/tv_feedback_commit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#e2e2e2"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/feedback_commit" />
+            
+        </RelativeLayout>
+        
+    </LinearLayout>
+
+</RelativeLayout>

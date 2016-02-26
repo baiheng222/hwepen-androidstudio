@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical" >
+
+    
+    <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+        
+       <TextView 
+             android:layout_width="wrap_content"         
+             android:layout_height="wrap_content"           
+             android:layout_centerInParent="true"  
+             android:gravity="center"       
+             android:text="@string/login_button"       
+             android:textSize="20sp" 
+             android:textColor="#7A7A7A" />
+       
+       <TextView
+             android:id="@+id/login_quit"
+             android:layout_width="wrap_content"   
+             android:layout_height="wrap_content" 
+             android:layout_marginLeft="10dip"  
+             android:background="@drawable/back_icon" />
+    </RelativeLayout>
+    
+
+    <LinearLayout
+        android:id="@+id/line12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dip"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal" >
+		 <com.hanvon.util.ClearEditText
+                android:id="@+id/username_editText"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:background="#FFFFFF"
+                android:hint="@string/login_user"
+                android:singleLine="true"
+                android:layout_marginLeft="10dip"
+                android:drawableRight="@drawable/login_skip"
+                android:maxLength="32"
+                android:textColor="#D7D7D7"
+                android:textColorHint="#D7D7D7"
+                android:textSize="15sp" 
+                android:imeOptions="actionNext" >
+            </com.hanvon.util.ClearEditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal" >
+
+            <com.hanvon.util.ClearEditText
+                android:id="@+id/passwd_editText"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:background="@android:color/transparent"
+                android:drawableRight="@drawable/login_skip"
+                android:hint="@string/login_pwd"
+                android:layout_marginLeft="10dip"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:maxLength="16"
+                android:textColor="#D7D7D7"
+                android:textColorHint="#D7D7D7"
+                android:textSize="15sp" 
+                android:imeOptions="actionDone">
+            </com.hanvon.util.ClearEditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:gravity="center"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:background="@drawable/login_button"/>
+            <Button
+                android:id="@+id/registuser"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/register_button" />
+        </LinearLayout>
+
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="20dip" >
+        <TextView     
+             android:id="@+id/remember_pwd"    
+             android:layout_width="wrap_content"         
+             android:layout_height="20dip"           
+             android:layout_centerInParent="true"  
+             android:gravity="center"     
+             android:layout_marginLeft="10dip"          
+             android:layout_marginRight="10dip"        
+             android:text="@string/remember_pwd"       
+             android:textSize="15sp"       
+             android:textColor="#A4A4A4" />
+        <TextView        
+             android:layout_width="200dip"   
+             android:layout_height="1dip"
+             android:layout_marginTop="12dip"      
+             android:layout_toLeftOf="@id/remember_pwd"  
+             android:background="#E5E5E5" />
+        <TextView
+             android:layout_width="200dip" 
+             android:layout_height="1dip"
+             android:layout_marginTop="12dip"      
+             android:layout_toRightOf="@+id/remember_pwd"     
+             android:background="#E5E5E5" />
+        </RelativeLayout>
+         <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dip"
+            android:orientation="horizontal" >
+            <ImageView
+                android:id="@+id/login_qq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:background="@drawable/login_qq" />
+            
+            <ImageView
+                android:id="@+id/login_weixin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dip"
+                android:contentDescription="@string/app_name"
+                android:background="@drawable/login_weixin" />
+           </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent" >
+
+        <ImageView
+            android:id="@+id/lable_item"
+            android:layout_width="@dimen/recording_gridItem_width"
+            android:layout_height="@dimen/recording_gridItem_hight"
+            android:contentDescription="@string/description"
+            android:src="@drawable/bq1" />
+
+        <TextView
+            android:id="@+id/lable_title"
+            android:layout_width="@dimen/recording_gridItemTitle_width"
+            android:layout_height="@dimen/recording_gridItemTitle_hight"
+            android:layout_alignLeft="@+id/lable_item"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/recording_gridItemTitle_mHorizontal"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/lable_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/lable_item"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/recording_gridItemTitle_mHorizontal"
+            android:text="" />
+
+        
+    </RelativeLayout>
+
+</LinearLayout>

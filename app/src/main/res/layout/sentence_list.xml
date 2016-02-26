@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/list_item_width"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@drawable/e_xx"
+        tools:ignore="UselessParent" >
+
+        <!-- 
+        <TextView
+            android:id="@+id/excerpt_list_date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="15px"
+            android:textColor="@color/green" />
+         -->
+
+        <TextView
+            android:id="@+id/sentence_list_item"
+            android:layout_width="@dimen/list_itemDate_width"
+            android:layout_height="@dimen/list_itemRecording_hight"
+            android:layout_marginLeft="@dimen/list_itemDate_mLeft"
+            android:layout_marginTop="@dimen/list_itemDate_mLeft"
+            android:text=""
+            android:textColor="@color/green" />
+        
+        <TextView
+            android:id="@+id/sentence_list_trans"
+            android:layout_width="@dimen/list_itemDate_width"
+            android:layout_height="@dimen/list_itemRecording_hight"
+            android:layout_below="@+id/sentence_list_item"
+            android:layout_marginLeft="@dimen/list_itemDate_mLeft"
+            android:layout_marginTop="@dimen/list_itemSumm_mTop"
+            android:text=""
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/sentence_list_image"
+            android:layout_width="@dimen/list_itemMore_width"
+            android:layout_height="@dimen/list_itemMore_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/list_itemMore_mRight"
+            android:contentDescription="@string/description"
+            android:src="@drawable/j" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/dd"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_heigth"
+        android:background="@drawable/top" >
+
+        <ImageView
+            android:id="@+id/sentence_epen"
+            android:layout_width="@dimen/top_title_width"
+            android:layout_height="@dimen/top_title_heigth"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/description"
+            android:src="@drawable/epen" />
+
+        <ImageButton
+            android:id="@+id/sentence_back"
+            android:layout_width="@dimen/top_back_width"
+            android:layout_height="@dimen/top_back_heigth"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/top_mLeft"
+            android:contentDescription="@string/description"
+            android:background="@drawable/back" />
+        
+        <ImageButton
+            android:id="@+id/sentence_home"
+            android:layout_width="@dimen/top_home_width"
+            android:layout_height="@dimen/top_home_heigth"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/top_mRight"
+            android:contentDescription="@string/description"
+            android:background="@drawable/shouye" />
+    </RelativeLayout>
+	
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/body" >
+
+        <ListView
+	        android:id="@+id/sentence_list"
+	        android:layout_width="@dimen/listView_width"
+	        android:layout_height="@dimen/listView_hight"
+	        android:layout_marginTop="@dimen/listView_mTop"
+	        android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/bottom_heigth" >
+        
+        <ImageView
+            android:id="@+id/sb"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/bottom_heigth"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom"
+            android:contentDescription="@string/description"/>
+
+        <ImageView
+            android:id="@+id/sb_search"
+            android:layout_width="@dimen/bottom_image_width"
+            android:layout_height="@dimen/bottom_image_heigth"
+            android:layout_centerHorizontal="true"
+            android:layout_alignTop="@+id/sb"
+            android:layout_marginTop="@dimen/bottom_image_mTop"
+            android:src="@drawable/search"
+            android:contentDescription="@string/description" />
+
+        <ImageView
+            android:id="@+id/sb_share"
+            android:layout_width="@dimen/bottom_image_width"
+            android:layout_height="@dimen/bottom_image_heigth"
+            android:layout_alignTop="@+id/sb"
+            android:layout_alignLeft="@+id/sb"
+            android:layout_marginLeft="@dimen/bottom_image_mHorizontal"
+            android:layout_marginTop="@dimen/bottom_image_mTop"
+            android:src="@drawable/share"
+            android:contentDescription="@string/description" />
+
+        <ImageView
+            android:id="@+id/sb_synchro"
+            android:layout_width="@dimen/bottom_image_width"
+            android:layout_height="@dimen/bottom_image_heigth"
+            android:layout_alignTop="@+id/sb"
+            android:layout_alignRight="@+id/sb"
+            android:layout_marginRight="@dimen/bottom_image_mHorizontal"
+            android:layout_marginTop="@dimen/bottom_image_mTop"
+            android:src="@drawable/synchro"
+            android:contentDescription="@string/description" />
+
+    </RelativeLayout>
+
+</LinearLayout>

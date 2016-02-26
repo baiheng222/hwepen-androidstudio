@@ -1,0 +1,261 @@
+<resources>
+    
+    <!-- FONT SIZE -->
+    <dimen name="fontXLargeSize">48px</dimen>
+    <dimen name="fontLargeSize">40px</dimen>
+    <dimen name="fontHighSize">36px</dimen>
+    <dimen name="fontMiddleSize">32px</dimen>
+    <dimen name="fontSmallSize">24px</dimen>
+    <dimen name="fontLSmallSize">19px</dimen>
+    
+    
+	<!-- TOP -->
+    <dimen name="top_heigth">99px</dimen>
+    <dimen name="top_title_width">224px</dimen>
+    <dimen name="top_title_heigth">50px</dimen>
+    
+    <dimen name="top_back_width">93px</dimen>
+    <dimen name="top_back_heigth">61px</dimen>
+    <dimen name="top_mLeft">30px</dimen>
+    
+    <dimen name="top_home_width">74px</dimen>
+    <dimen name="top_home_heigth">58px</dimen>
+    <dimen name="top_mRight">30px</dimen>
+    
+    
+    <!-- BOTTOM -->
+    <dimen name="bottom_heigth">115px</dimen>
+    <dimen name="bottom_image_width">90px</dimen>
+    <dimen name="bottom_image_heigth">58px</dimen>
+    <dimen name="bottom_image_mTop">29px</dimen>
+    <dimen name="bottom_image_mHorizontal">30px</dimen>
+    <dimen name="bottom_image_mLongHorizontal">218px</dimen>
+    
+    
+    <!-- MAIN -->
+	<dimen name="main_interval_vertical">96px</dimen>
+	
+	<dimen name="main_row_width">666px</dimen>
+	<dimen name="main_row_hight">99px</dimen>
+	
+	<dimen name="main_rowImage_width">69px</dimen>
+	<dimen name="main_rowImage_hight">74px</dimen>
+	<dimen name="main_rowImage_mLeft">45px</dimen>
+	<dimen name="main_rowImage_mTop">16px</dimen>
+	
+	<dimen name="main_rowText_mLeft">38px</dimen>
+	<dimen name="main_rowText_mTop">32px</dimen>
+	
+	<dimen name="main_rowMore_width">39px</dimen>
+	<dimen name="main_rowMore_hight">45px</dimen>
+	<dimen name="main_rowMore_mRight">38px</dimen>
+	<dimen name="main_rowMore_mTop">32px</dimen>
+	
+	<dimen name="main_row_mTop">16px</dimen>
+	
+	<dimen name="main_welcome_mBottom">48px</dimen>
+
+	
+	<!-- LOGIN / REGISTER -->
+	<dimen name="login_interval_vertical">112px</dimen>
+	
+	<dimen name="login_row_width">579px</dimen>
+	<dimen name="login_row_hight">80px</dimen>
+	
+	<dimen name="login_rowText_mTop">21px</dimen>
+	<dimen name="login_rowText_mLeft">30px</dimen>
+	
+	<dimen name="login_rowEdit_width">405px</dimen>
+	<dimen name="register_rowEdit_width">375px</dimen>
+	<dimen name="login_rowEdit_hight">40px</dimen>
+	<dimen name="login_rowEdit_mTop">26px</dimen>
+	<dimen name="login_rowEdit_mLeft">8px</dimen>
+	
+	<dimen name="login_row_mTop">16px</dimen>
+	
+	<dimen name="login_btn_width">147px</dimen>
+	<dimen name="login_btn_hight">59px</dimen>
+	<dimen name="login_btn_mTop">96px</dimen>
+	
+	<dimen name="login_forgetPwd_mTop">40px</dimen>
+	<dimen name="login_forgetPwd_mLeft">27px</dimen>
+	
+	<dimen name="register_btn_width">176px</dimen>
+	<dimen name="register_btn_hight">59px</dimen>
+	<dimen name="register_btn_mTop">96px</dimen>
+	
+	
+	<!-- COMMON -->
+	<dimen name="body">1018px</dimen>
+	<dimen name="listView_width">675px</dimen>
+	<dimen name="listView_hight">998px</dimen>
+	<dimen name="listView_recording_hight">984px</dimen>
+	<dimen name="listView_mTop">10px</dimen>
+	
+	<dimen name="list_header_heigth">104px</dimen>
+	<dimen name="list_header_mBottom">16px</dimen>
+	<dimen name="list_header_mLeft">15px</dimen>
+	
+	<dimen name="list_item_width">675px</dimen>
+	<dimen name="list_item_height">150px</dimen>
+	<dimen name="list_itemDate_width">510px</dimen>
+	
+	<dimen name="list_itemSumm_height">56px</dimen>
+	<dimen name="list_itemDate_mLeft">30px</dimen>
+	<dimen name="list_itemDate_mTop">24px</dimen>
+	<dimen name="list_itemSumm_mTop">13px</dimen>
+	<dimen name="list_itemRecording_hight">40px</dimen>
+	
+	<dimen name="list_itemMore_width">42px</dimen>
+	<dimen name="list_itemMore_height">45px</dimen>
+	<dimen name="list_itemMore_mRight">45px</dimen>
+	
+	
+	<!-- EXCERPT -->
+	<dimen name="create_width">630px</dimen>
+	<dimen name="createTitle_hight">72px</dimen>
+	<dimen name="readTitle_hight">48px</dimen>
+	<dimen name="createContent_hight">864px</dimen>
+	<dimen name="readContent_hight">848px</dimen>
+	<dimen name="readContent_mLeft">45px</dimen>
+	<dimen name="create_mTop">48px</dimen>
+	
+	<dimen name="line_width">675px</dimen>
+	<dimen name="line_hight">1px</dimen>
+	<dimen name="line_mTop">16px</dimen>
+	
+	<dimen name="bb_width">132px</dimen>
+	<dimen name="bb_hight">54px</dimen>
+	<dimen name="bb_mHorizontal">23px</dimen>
+	<dimen name="bb_mBottom">29px</dimen>
+	<dimen name="bb_recording_mHorizontal">5px</dimen>
+	<dimen name="bb_recording_mTop">11px</dimen>
+	
+	<dimen name="search_height">85px</dimen>
+	<dimen name="search_search_widht">26px</dimen>
+	<dimen name="search_search_height">29px</dimen>
+	<dimen name="search_search_mLeft">75px</dimen>
+	<dimen name="search_search_mTop">32px</dimen>
+	<dimen name="search_clear_mRight">68px</dimen>
+	<dimen name="search_clear_mTop">29px</dimen>
+	
+	<dimen name="search_text_width">495px</dimen>
+	<dimen name="search_text_hight">45px</dimen>
+	<dimen name="search_text_mTop">24px</dimen>
+	<dimen name="search_text_mLeft">15px</dimen>
+	
+	
+	<!-- RECORDING -->
+	<dimen name="recording_seekbar_mHorizontal">30px</dimen>
+	<dimen name="recording_seekbar_mTop">38px</dimen>
+	
+	<dimen name="recording_title_width">375px</dimen>
+	<dimen name="recording_title_hight">56px</dimen>
+	<dimen name="recording_title_mLeft">45px</dimen>
+	<dimen name="recording_title_mTop">116px</dimen>
+	
+	<dimen name="recording_play_width">54px</dimen>
+	<dimen name="recording_play_hight">58px</dimen>
+	<dimen name="recording_play_mRight">45px</dimen>
+	<dimen name="recording_play_m2Right">30px</dimen>
+	
+	<dimen name="recording_grid_width">645px</dimen>
+	<dimen name="recording_grid_hight">320px</dimen>
+	<dimen name="recording_grid_mTop">38px</dimen>
+	<dimen name="recording_grid_mLeft">38px</dimen>
+	
+	<dimen name="recording_resultText_mTop">38px</dimen>
+	<dimen name="recording_resultBK_width">660px</dimen>
+	<dimen name="recording_resultBK_hight">368px</dimen>
+	<dimen name="recording_resultBK_mTop">8px</dimen>
+	<dimen name="recording_result_width">600px</dimen>
+	<dimen name="recording_result_hight">272px</dimen>
+	<dimen name="recording_result_mTop">24px</dimen>
+	
+	<dimen name="recording_gridItem_width">324px</dimen>
+	<dimen name="recording_gridItem_hight">80px</dimen>
+	<dimen name="recording_gridItemTitle_width">165px</dimen>
+	<dimen name="recording_gridItemTitle_hight">40px</dimen>
+	<dimen name="recording_gridItemTitle_mHorizontal">15px</dimen>
+	
+	
+	<!-- WORDS -->
+	<dimen name="words_level_hight">173px</dimen>
+	<dimen name="words_all_width">113px</dimen>
+	<dimen name="words_all_hight">43px</dimen>
+	<dimen name="words_all_mTop">32px</dimen>
+	<dimen name="words_all_mLeft">30px</dimen>
+	<dimen name="words_high_width">155px</dimen>
+	<dimen name="words_high_hight">50px</dimen>
+	<dimen name="words_high_mTop">40px</dimen>
+	<dimen name="words_high_mLeft">15px</dimen>
+	
+	<dimen name="words_body_hight">845px</dimen>
+	<dimen name="words_left_width">62px</dimen>
+	<dimen name="words_left_hight">66px</dimen>
+	<dimen name="words_left_mTop">180px</dimen>
+	<dimen name="words_left_mHorizontal">23px</dimen>
+	
+	<dimen name="words_grid_width">360px</dimen>
+	<dimen name="words_grid_hight">335px</dimen>
+	<dimen name="words_grid_mTop">56px</dimen>
+	<dimen name="words_grid_verticalSpacing">6px</dimen>
+	
+	<dimen name="words_wordShow_mTop">5px</dimen>
+	<dimen name="words_wordShow_mLeft">53px</dimen>
+	<dimen name="words_wordCount_mBottom">8px</dimen>
+	<dimen name="words_wordCount_mRight">53px</dimen>
+	<dimen name="words_word_width">662px</dimen>
+	<dimen name="words_word_hight">355px</dimen>
+	<dimen name="words_word_mBottom">32px</dimen>
+	<dimen name="words_wordCnt_mTop">32px</dimen>
+	<dimen name="words_wordCnt_mLeft">30px</dimen>
+	<dimen name="words_wordCnt_mRight">30px</dimen>
+	<dimen name="words_wordCnt_mBottom">8px</dimen>
+	
+	<dimen name="words_bb_width">122px</dimen>
+	<dimen name="words_bb_hight">45px</dimen>
+	<dimen name="words_bb_mLeft">30px</dimen>
+	<dimen name="words_bb_mBottom">16px</dimen>
+	
+	<dimen name="words_item_width">160px</dimen>
+	<dimen name="words_item_hight">62px</dimen>
+	<dimen name="words_item_fontSize">26px</dimen>
+	
+	
+	<!-- SENTENCE -->
+	<dimen name="sentence_width">720px</dimen>
+	<dimen name="sentence_height">320px</dimen>
+	<dimen name="sentence_mTop">96px</dimen>
+	
+	<dimen name="sentence_title_mLeft">45px</dimen>
+	<dimen name="sentence_title_mTop">38px</dimen>
+	
+	<dimen name="sentence_button_width">42px</dimen>
+	<dimen name="sentence_button_hight">45px</dimen>
+	<dimen name="sentence_button_mRight">45px</dimen>
+	<dimen name="sentence_button_mTop">29px</dimen>
+	
+	<dimen name="sentence_content_width">630px</dimen>
+	<dimen name="sentence_content_height">192px</dimen>
+	<dimen name="sentence_content_mTop">16px</dimen>
+
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+    	<dimen name="activity_vertical_margin">16dp</dimen>
+
+    
+    	<dimen name="text_size_large">18.0dip</dimen>
+    	<dimen name="text_size_larger">20.0dip</dimen>
+
+    	<dimen name="title_bar_height">30dip</dimen>
+    	<dimen name="bottom_bar_height">35dip</dimen>
+    
+
+    	<dimen name="composing_height">16dip</dimen>
+     	<dimen name="candidate_margin_left_right">10dip</dimen>
+     
+
+    	<dimen name="slidingmenu_offset">80dp</dimen>
+    	<dimen name="shadow_width">15dp</dimen>
+
+</resources>

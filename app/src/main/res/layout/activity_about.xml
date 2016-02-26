@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:background="#f6f6f6" >
+
+        <ImageView
+            android:id="@+id/iv_about_backbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/tv_title_about"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/title_about"
+            android:textColor="#4d4d4d"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    
+	<LinearLayout 
+      android:id="@+id/ll_aboutus_top"
+      android:layout_width="fill_parent"
+      android:layout_height="200dip"
+      android:layout_marginTop="100dip"
+      android:orientation="vertical"
+      android:gravity="center" >
+      <ImageView 
+          android:id="@+id/iv_aboutus_logo"
+          android:layout_width="150dip"
+          android:layout_height="130dip"
+          android:background="@drawable/ic_launcher"/>
+      <TextView 
+          android:id="@+id/tvVersionName"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:padding="5dip"
+           android:textColor="@android:color/black"
+          android:text="version"/>
+  </LinearLayout>
+  
+	<TextView android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:padding="10dip"
+      android:layout_marginTop="20dip"
+      android:text="@string/about_advertise"
+      android:textColor="@android:color/black"
+      android:textSize="20sp"
+      android:gravity="center"
+      android:layout_below="@id/ll_aboutus_top"/>
+
+
+</RelativeLayout>

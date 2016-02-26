@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+    
+    <RelativeLayout
+        android:id="@+id/relativeLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/top_bar" >
+
+        <ImageView
+            android:id="@+id/recording_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/top_pressed"
+            android:clickable="true"
+            android:src="@drawable/top_fanhui" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/recording_back"
+            android:text="录音"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/recording_more"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/top_pressed"
+            android:clickable="true"
+            android:src="@drawable/top_more" />
+    </RelativeLayout>
+    
+    <ImageView
+        android:id="@+id/recording_refresh_progress"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/relativeLayout01"
+        android:layout_centerInParent="true"
+        android:background="@anim/refresh"
+        android:visibility="gone" />
+    
+    <RelativeLayout
+        android:id="@+id/relativeLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/recording_refresh_progress" >
+
+        <com.hanvon.autolistview.AutoListView
+            android:id="@+id/recording_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    
+</RelativeLayout>

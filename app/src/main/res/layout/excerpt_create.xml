@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/dd" >
+    
+    <RelativeLayout
+        android:id="@+id/relativeLayout0"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/top" >
+
+        <ImageView
+            android:id="@+id/excerpt_create_epen"
+            android:layout_width="110dp"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/epen"
+            android:contentDescription="@string/description" />
+
+        <ImageButton
+            android:id="@+id/excerpt_create_back"
+            android:layout_width="60dp"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/back"
+            android:contentDescription="@string/description" />
+
+        <ImageButton
+            android:id="@+id/excerpt_create_home"
+            android:layout_width="60dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/shouye"
+            android:contentDescription="@string/description" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/relativeLayout0"
+        android:background="@drawable/xx" >
+
+        <EditText
+            android:id="@+id/excerpt_create_title"
+            android:layout_width="fill_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@null"
+            android:textSize="20sp"
+            android:hint="@string/inputTitle"
+            android:inputType="text">
+        </EditText>
+
+        <ImageView
+            android:id="@+id/excerpt_create_line"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/excerpt_create_title"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/e_line"
+            android:contentDescription="@string/description"/>
+        
+        <EditText
+            android:id="@+id/excerpt_create_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/excerpt_create_line"
+            android:layout_above="@+id/excerpt_create_finish"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="@string/inputContent"
+            android:inputType="textMultiLine"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/excerpt_create_finish"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="14dp"
+            android:src="@drawable/wc"
+            android:contentDescription="@string/description"/>
+        
+        <ImageView
+            android:id="@+id/excerpt_create_delete"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_alignTop="@+id/excerpt_create_finish"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/sc"
+            android:contentDescription="@string/description"/>
+
+    </RelativeLayout>
+    
+</RelativeLayout>

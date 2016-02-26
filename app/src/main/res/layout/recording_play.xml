@@ -1,0 +1,230 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/top_bar" >
+
+        <ImageView
+            android:id="@+id/recording_play_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/top_pressed"
+            android:clickable="true"
+            android:src="@drawable/top_fanhui" />
+         <TextView android:id="@+id/tv_recordplay_save"
+            android:layout_width="50dip"
+            android:layout_height="fill_parent"
+            android:text="保存"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:clickable="true"
+        android:layout_marginRight="10dip"
+            android:textColor="@android:color/white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/relativeLayout01" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout03"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" >
+
+            <TextView
+                android:id="@+id/recording_play_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="00:00:00"
+                android:textColor="@color/main_text"
+                android:textSize="15sp" />
+            
+            <TextView
+                android:id="@+id/recording_play_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:text=""
+                android:textColor="@color/main_text"
+                android:textSize="13sp" />
+
+<!-- 
+            <ImageView
+                android:id="@+id/recording_download"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/recording_play_time"
+                android:clickable="true"
+                android:background="@drawable/recording_download" />
+            
+            <TextView
+                android:id="@+id/recording_play_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/recording_download"
+                android:layout_marginLeft="20dp"
+                android:text=""
+                android:textColor="@color/main_text"
+                android:textSize="13sp" />
+ -->
+
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/relativeLayout04"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@+id/relativeLayout03"
+            android:background="@drawable/recording_player_bg" >
+            
+            <TextView
+                android:id="@+id/recording_play_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="15sp"
+                android:text="0% 已缓冲......" />
+            
+            <TextView
+                android:id="@+id/recording_play_total_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:text="00:00:00" />
+            <TextView
+                android:id="@+id/recording_play_y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/recording_play_total_time"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:text="/" />
+            <TextView
+                android:id="@+id/recording_play_reduce_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/recording_play_y"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/bottom_color"
+                android:textSize="15sp"
+                android:text="00:00:00" />
+            
+            <SeekBar
+                android:id="@+id/recording_play_seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recording_play_total_time"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:progressDrawable="@drawable/seek_bar"
+                android:thumb="@drawable/seek_bar_dot" />
+            
+            <ImageView
+                android:id="@+id/recording_play_play"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:layout_below="@+id/recording_play_seekBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/recording_play_pause" />
+            
+            <ImageView
+                android:id="@+id/recording_play_pre"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:layout_below="@+id/recording_play_seekBar"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/recording_play_play"
+                android:layout_marginRight="50dp"
+                android:src="@drawable/recording_play_pre" />
+            
+            <ImageView
+                android:id="@+id/recording_play_next"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:layout_below="@+id/recording_play_seekBar"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/recording_play_play"
+                android:layout_marginLeft="50dp"
+                android:src="@drawable/recording_play_next" />
+            
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/relativeLayout04"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/recording_text_bg" >
+
+            <EditText
+                android:id="@+id/recording_play_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/recording_play_save"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="备注内容"
+                android:text=""
+                android:textColor="@color/edit_text"
+                android:textColorHint="@color/lightgray"
+                android:textSize="18sp"
+                android:visibility="visible" />
+            
+            <ImageView
+                android:id="@+id/recording_play_progress"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+				android:layout_centerInParent="true"                
+                android:background="@anim/refresh"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/recording_play_save"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/recording_play_recg_save"  />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

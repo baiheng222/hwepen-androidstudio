@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".FeedbackActivity" >
+    
+    <RelativeLayout
+        android:id="@+id/relativeLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/top_bar" >
+
+        <ImageView
+            android:id="@+id/feedback_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/top_pressed"
+            android:clickable="true"
+            android:src="@drawable/top_fanhui" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/feedback_back"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="意见反馈" />
+        
+        <TextView
+            android:id="@+id/feedback_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:text="发送" />
+    </RelativeLayout>
+    
+    <EditText
+        android:id="@+id/feekback_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout01"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="textMultiLine" >
+    </EditText>
+
+</RelativeLayout>

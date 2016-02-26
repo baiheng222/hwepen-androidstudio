@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/remember_pwd_title" />
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="30dip"
+        android:layout_marginTop="40dip"
+        android:gravity="center"
+        android:text="@string/resetpwd_reset"
+        android:textColor="#999999"
+        android:textSize="18sp"/>
+    
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginTop="20dip" 
+        android:text="@string/new_passwd"
+        android:textColor="#999999"
+        android:textSize="15sp"/>
+
+        <LinearLayout 
+        android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+        <com.hanvon.util.ClearEditText
+                android:id="@+id/resetpwd_newpwd"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:background="#FFFFFF"
+                android:hint="@string/pwd_format"
+                android:singleLine="true"
+                android:drawableRight="@drawable/login_skip"
+                android:maxLength="16"
+                android:inputType="textPassword"
+                android:textColor="#D7D7D7"
+                android:textColorHint="#D7D7D7"
+                android:textSize="15sp" 
+                android:imeOptions="actionDone" >
+            </com.hanvon.util.ClearEditText>
+        </LinearLayout>
+<!-- 
+        <TextView
+        android:id="@+id/resetpwd_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginTop="10dip" 
+        android:text="@string/reset_passwd_error"
+        android:textColor="#999999"
+        android:textSize="15sp"/>
+ -->
+   <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginTop="20dip" 
+        android:text="@string/ensure_new_passwd"
+        android:textColor="#999999"
+        android:textSize="15sp"/>
+        
+   <LinearLayout 
+        android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+        <com.hanvon.util.ClearEditText
+                android:id="@+id/resetpwd_ensurenewpwd"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:background="#FFFFFF"
+                android:hint="@string/pwd_format"
+                android:singleLine="true"
+                android:drawableRight="@drawable/login_skip"
+                android:maxLength="16"
+                android:inputType="textPassword"
+                android:textColor="#D7D7D7"
+                android:textColorHint="#D7D7D7"
+                android:textSize="15sp" 
+                android:imeOptions="actionDone" >
+            </com.hanvon.util.ClearEditText>
+        </LinearLayout>
+
+          <TextView
+                android:id="@+id/resetpwd_ensure"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:gravity="center"
+                android:layout_marginTop="20dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="#3B8D8D"
+                android:text="确定"
+                android:textSize="15sp"
+                android:textColor="@color/white"/>
+</LinearLayout>
+

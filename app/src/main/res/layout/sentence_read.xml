@@ -1,0 +1,183 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/dd"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_heigth"
+        android:background="@drawable/top" >
+
+        <ImageView
+            android:id="@+id/sentence_read_epen"
+            android:layout_width="@dimen/top_title_width"
+            android:layout_height="@dimen/top_title_heigth"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/description"
+            android:src="@drawable/epen" />
+
+        <ImageButton
+            android:id="@+id/sentence_read_back"
+            android:layout_width="@dimen/top_back_width"
+            android:layout_height="@dimen/top_back_heigth"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/top_mLeft"
+            android:contentDescription="@string/description"
+            android:background="@drawable/back" />
+        
+        <ImageButton
+            android:id="@+id/sentence_read_home"
+            android:layout_width="@dimen/top_home_width"
+            android:layout_height="@dimen/top_home_heigth"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/top_mRight"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/description"
+            android:background="@drawable/shouye" />
+    </RelativeLayout>
+	
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/body" >
+
+        <ImageView
+            android:id="@+id/sentence_read_original_bk"
+            android:layout_width="@dimen/sentence_width"
+            android:layout_height="@dimen/sentence_height"
+            android:layout_marginTop="@dimen/sentence_mTop"
+            android:background="@drawable/sdd"
+            android:contentDescription="@string/description"/>
+        
+        <TextView
+            android:id="@+id/sentence_read_original_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/sentence_read_original_bk"
+            android:layout_alignLeft="@+id/sentence_read_original_bk"
+            android:layout_marginLeft="@dimen/sentence_title_mLeft"
+            android:layout_marginTop="@dimen/sentence_title_mTop"
+            android:textSize="@dimen/fontMiddleSize"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/originalContext" />
+        
+        <ImageView
+            android:id="@+id/sentence_read_original_delete"
+            android:layout_width="@dimen/sentence_button_width"
+            android:layout_height="@dimen/sentence_button_hight"
+            android:layout_alignTop="@+id/sentence_read_original_bk"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/sentence_button_mRight"
+            android:layout_marginTop="@dimen/sentence_button_mTop"
+            android:src="@drawable/tc"
+            android:contentDescription="@string/description"/>
+        
+        <com.hanvon.widget.ObservableScrollView
+            android:id="@+id/sentence_read_original_scrollView"
+            android:layout_width="@dimen/sentence_content_width"
+            android:layout_height="@dimen/sentence_content_height"
+            android:layout_below="@+id/sentence_read_original_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/sentence_content_mTop" >
+            
+	        <TextView
+	            android:id="@+id/sentence_read_original"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="" />
+        
+        </com.hanvon.widget.ObservableScrollView>
+        
+        
+
+        <ImageView
+            android:id="@+id/sentence_read_translate_bk"
+            android:layout_width="@dimen/sentence_width"
+            android:layout_height="@dimen/sentence_height"
+            android:layout_below="@+id/sentence_read_original_bk"
+            android:layout_marginTop="@dimen/sentence_mTop"
+            android:src="@drawable/sdd"
+            android:contentDescription="@string/description"/>
+        
+        <TextView
+            android:id="@+id/sentence_read_translate_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/sentence_read_original_title"
+            android:layout_alignTop="@+id/sentence_read_translate_bk"
+            android:layout_marginTop="@dimen/sentence_title_mTop"
+            android:textSize="@dimen/fontMiddleSize"
+            android:textStyle="bold"
+            android:textColor="@color/brown"
+            android:text="@string/translateContext" />
+        
+        <!-- 
+        <ImageView
+            android:id="@+id/sentence_read_translate_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/sentence_read_original_delete"
+            android:layout_alignTop="@+id/sentence_read_translate_bk"
+            android:layout_marginTop="18px"
+            android:src="@drawable/xg"
+            android:contentDescription="@string/description"/>
+         -->
+
+        <com.hanvon.widget.ObservableScrollView
+            android:id="@+id/sentence_read_translate_scrollView"
+            android:layout_width="@dimen/sentence_content_width"
+            android:layout_height="@dimen/sentence_content_height"
+            android:layout_below="@+id/sentence_read_translate_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/sentence_content_mTop" >
+            
+	        <TextView
+	            android:id="@+id/sentence_read_translate"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="" />
+        
+        </com.hanvon.widget.ObservableScrollView>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/bottom_heigth" > <!-- 解决底部有一条白线 -->
+
+        <ImageView
+            android:id="@+id/srb"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/bottom_heigth"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom"
+            android:contentDescription="@string/description"/>
+
+        <ImageView
+            android:id="@+id/srb_search"
+            android:layout_width="@dimen/bottom_image_width"
+            android:layout_height="@dimen/bottom_image_heigth"
+            android:layout_alignRight="@+id/srb"
+            android:layout_alignTop="@+id/srb"
+            android:layout_marginRight="@dimen/bottom_image_mHorizontal"
+            android:layout_marginTop="@dimen/bottom_image_mTop"
+            android:src="@drawable/search"
+            android:contentDescription="@string/description" />
+
+        <ImageView
+            android:id="@+id/srb_share"
+            android:layout_width="@dimen/bottom_image_width"
+            android:layout_height="@dimen/bottom_image_heigth"
+            android:layout_alignTop="@+id/srb"
+            android:layout_alignLeft="@+id/srb"
+            android:layout_marginLeft="@dimen/bottom_image_mHorizontal"
+            android:layout_marginTop="@dimen/bottom_image_mTop"
+            android:src="@drawable/share"
+            android:contentDescription="@string/description" />
+
+    </RelativeLayout>
+
+</LinearLayout>
