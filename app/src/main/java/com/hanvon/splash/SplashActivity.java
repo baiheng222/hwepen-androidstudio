@@ -54,6 +54,7 @@ public class SplashActivity extends Activity
 	private static final long SPLASH_DELAY_MILLIS = 3000;
 
 	private static final String SHAREDPREFERENCES_NAME = "first_pref";
+	private int loginStatus;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +102,8 @@ public class SplashActivity extends Activity
 	private void goHome()
 	{
 		//if (!StringUtil.isEmpty(lastUser.getUserId()))
-		if (!StringUtil.isEmpty(userId))
+		//if (!StringUtil.isEmpty(userId))
+		if (1 == loginStatus)
 		{
 			startActivity(new Intent(getApplication(), MainActivity.class));
 			finish();
@@ -145,7 +147,7 @@ public class SplashActivity extends Activity
 		//mUserName = hvnname;
 
 		int status = mSharedPreferences.getInt("status", 0);
-		//loginStatus = status;
+		loginStatus = status;
 		LogUtil.i("flag:" + flag + "  nickname:" + nickname + "   status:" + status + "  username:" + hvnname + "  figureurl:" + figureurl);
 
 		if (status == 1)	//已经登录
@@ -242,27 +244,47 @@ public class SplashActivity extends Activity
 		}
 
 		int status = mSharedPreferences.getInt("status", 0);
+		loginStatus = status;
 		passwd = mSharedPreferences.getString("passwd", "");
 
 
 		//if (!StringUtil.isEmpty(lastUser.getUserId()))
-		if (status == 0 && !hvnname.isEmpty()) //未登录，并且用户名不为空
+		if (0 == status)	//not login
 		{
-			if (new ConnectionDetector(this).isConnectingTOInternet())  //有网络
+			Log.d(TAG, "!!!!!!!!status == 0, not login ");
+			if (0 == flag)	//hanwang user
 			{
-				//new LoginCheck(lastUser.getUserId(), lastUser.getPassword()).loginCheck();
-				new LoginCheck(hvnname, passwd).loginCheck();
+				Log.d(TAG, "!!!!!!!! flag == 0, hanwang user");
+				if (!hvnname.isEmpty()) //未登录，并且用户名不为空
+				{
+					Log.d(TAG, "!!!!! hvname is not empty");
+					if (new ConnectionDetector(this).isConnectingTOInternet())  //有网络
+					{
+						Log.d(TAG, "!!!!!! connect to intelnet");
+						//new LoginCheck(lastUser.getUserId(), lastUser.getPassword()).loginCheck();
+						new LoginCheck(hvnname, passwd).loginCheck();
+					}
+					else //无网络使用本定名字
+					{
+						Log.d(TAG, "!!!!! no intelnet ,use local user");
+						//网络原因用户没有验证，继续使用本地数据
+						SplashActivity.userId = DevCons.LOCAL;
+						Log.e(TAG, "登录验证异常");
+					}
+				}
+				else
+				{
+					Log.d(TAG, "本地无用户数据");
+				}
 			}
-			else //无网络使用本定名字
+			else	//QQ, WeiChat thirdpart user
 			{
-				//网络原因用户没有验证，继续使用本地数据
-				SplashActivity.userId = DevCons.LOCAL;
-				Log.e(TAG, "登录验证异常");
+				Log.d(TAG, "!!!! thirdpart user login !!!");
 			}
 		}
 		else
 		{
-			Log.d(TAG, "本地无用户数据");
+			Log.d(TAG, "!!!!!! login !!!!1");
 		}
 	}
 	

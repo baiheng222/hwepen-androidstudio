@@ -30,7 +30,7 @@ public class HelpActivity extends Activity implements OnClickListener {
         
         mWebView = (WebView) findViewById(R.id.webView);
         
-        mWebView.loadUrl("file:///android_asset/suji_helper.htm");
+        mWebView.loadUrl("file:///android_asset/help.htm");
     }
 
     @Override

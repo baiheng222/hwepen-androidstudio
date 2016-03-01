@@ -111,15 +111,17 @@ public class MainActivity extends BaseActivity implements OnClickListener
 			{
 				if (StringUtil.isEmpty(SplashActivity.userId))
 				//if (HanvonApplication.hvnName.equals(""))
-				//if (0 == loginStatus)
+				if (0 == loginStatus)
 				{ //登录验证异常重新登录
 					Toast.makeText(getApplication(), "登录验证超时或异常，请重新登录", Toast.LENGTH_LONG).show();
 					startActivity(new Intent(getApplication(), LoginActivity.class));
 					finish();
 				}
-				else if (SplashActivity.userId.equals(DevCons.LOCAL))
+				else if (!(new ConnectionDetector(MainActivity.this).isConnectingTOInternet()))
+				//else if (SplashActivity.userId.equals(DevCons.LOCAL))
 				{ //登录验证超时（无网络） 使用本地数据
-					curUserId = SplashActivity.lastUser.getUserId();
+					//curUserId = SplashActivity.lastUser.getUserId();
+					curUserId = DevCons.LOCAL;
 					startActivity(new Intent(MainActivity.this, ExcerptActivity.class));
 				}
 				else

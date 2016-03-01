@@ -80,7 +80,8 @@
         </activity>
 
         <activity android:name=".login.RegisterUserGetCodePhone" android:launchMode="singleTask" android:screenOrientation="portrait"></activity>
-
+        <activity android:name=".login.ModifyPassword"  android:launchMode="singleTask" android:screenOrientation="portrait"></activity>
+        <activity android:name=".login.ModifyUserName"  android:launchMode="singleTask" android:screenOrientation="portrait"></activity>
         <activity android:name=".login.ShowUserMessage" android:launchMode="singleTask" android:screenOrientation="portrait"></activity>
         <activity android:name=".login.RegisterUserFromEmail" android:launchMode="singleTask" android:screenOrientation="portrait"></activity>
         <activity android:name=".LogInActivity" android:launchMode="singleTask" android:screenOrientation="portrait"></activity>
