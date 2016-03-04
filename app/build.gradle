@@ -13,9 +13,9 @@ android {
     defaultConfig {
         applicationId "com.hanvon.hwepen"
         minSdkVersion 17
-        targetSdkVersion 23
+
         versionCode 1
-        versionName "1.1.5"
+        versionName "1.1.7"
     }
     buildTypes {
         release {
@@ -24,10 +24,18 @@ android {
         }
     }
 
+    sourceSets{
+        main{
+            jniLibs.srcDirs=['libs']
+        }
+    }
+
     useLibrary 'org.apache.http.legacy'
+
+    lintOptions {
+        abortOnError false
+    }
 }
-
-
 
 
 dependencies {

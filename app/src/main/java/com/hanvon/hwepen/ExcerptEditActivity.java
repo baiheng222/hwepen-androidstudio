@@ -1,5 +1,6 @@
 package com.hanvon.hwepen;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
@@ -7,6 +8,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -28,14 +31,20 @@ import com.hanvon.splash.SplashActivity;
 import com.hanvon.util.ConnectionDetector;
 import com.hanvon.util.FileUtil;
 import com.hanvon.util.HttpClientHelper;
+import com.hanvon.util.HvnCloudManager;
 import com.hanvon.util.StringUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class ExcerptEditActivity extends BaseActivity
 {
@@ -62,11 +71,108 @@ public class ExcerptEditActivity extends BaseActivity
 	
 	private static final int CREATE = 0;
 	private static final int UPDATE = 1;
-	
+
+	private final static int UPLLOAD_FILE_CLOUD_SUCCESS = 5;
+	private final static int UPLLOAD_FILE_CLOUD_FAIL = 6;
+
 	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
 	
 	private ProgressDialog pd;
+	private String  strLinkPath = null;
+	private Bitmap bitmapLaunch;
+	private Boolean bShareClick = false;
+
 	private static final String TAG = "ExcerptEditActivity";
+
+
+	private Handler handler = new Handler() {
+		@SuppressLint("ShowToast")
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+
+				case UPLLOAD_FILE_CLOUD_SUCCESS:
+					pd.dismiss();
+					showShare();
+
+					break;
+				case UPLLOAD_FILE_CLOUD_FAIL:
+					pd.dismiss();
+					Toast.makeText(ExcerptEditActivity.this, "获取链接失败，不能分享!", Toast.LENGTH_SHORT).show();
+					bShareClick = false;
+
+					break;
+
+				default:
+					break;
+			}
+		}
+	};
+
+
+	private void showShare() {
+		ShareSDK.initSDK(this);
+		OnekeyShare oks = new OnekeyShare();
+		//关闭sso授权
+		oks.disableSSOWhenAuthorize();
+		Log.i(TAG, "tong------strLinkPath:"+strLinkPath);
+		// 分享时Notification的图标和文字  2.5.9以后的版本不调用此方法
+		//oks.setNotification(R.drawable.ic_launcher, getString(R.string.app_name));
+		// title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
+		oks.setTitle(getString(R.string.share_from_hanvon));
+		// titleUrl是标题的网络链接，仅在人人网和QQ空间使用
+		oks.setTitleUrl(strLinkPath);
+		// text是分享文本，所有平台都需要这个字段
+//		 String title = etNoteTitle.getText().toString();
+//		 if(title == "")
+//		 {
+//			 String strContent = etScanContent.getText().toString();
+//			 title = strContent;
+//		 }
+//		 oks.setText(title);
+		// imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+		String curPath = getApplicationContext().getFilesDir().getPath();
+
+		copyPhoto();
+		String srcPath = curPath + "/"+"image.png";
+		//String newPath= "/sdcard/app_launcher.png";
+		Log.i(TAG, "tong-----------srcPath:"+srcPath);
+
+		//copyFile(srcPath,newPath);
+		oks.setImagePath(srcPath);//确保SDcard下面存在此张图片
+		// url仅在微信（包括好友和朋友圈）中使用
+		oks.setUrl(strLinkPath);
+		// comment是我对这条分享的评论，仅在人人网和QQ空间使用
+		oks.setComment("我是测试评论文本");
+		// site是分享此内容的网站名称，仅在QQ空间使用
+		oks.setSite(getString(R.string.app_name));
+		// siteUrl是分享此内容的网站地址，仅在QQ空间使用
+		oks.setSiteUrl(strLinkPath);
+
+		// 启动分享GUI
+		oks.show(this);
+		bShareClick = false;
+	}
+
+	public void copyPhoto()
+	{
+
+		bitmapLaunch = BitmapFactory.decodeResource(getResources(), R.drawable.app_launcher);
+		FileOutputStream fos = null;
+		try {
+			fos = openFileOutput("image.png", Context.MODE_PRIVATE);
+			bitmapLaunch.compress(Bitmap.CompressFormat.PNG, 100, fos);
+		} catch (FileNotFoundException e) {
+		} finally {
+			if (fos != null) {
+				try {
+					fos.flush();
+					fos.close();
+				} catch (IOException e) {
+				}
+			}
+		}
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -204,7 +310,12 @@ public class ExcerptEditActivity extends BaseActivity
 				
 			case R.id.excerpt_edit_share:
 //				Toast.makeText(mContext, "分享", Toast.LENGTH_SHORT).show();
-				initShareIntent();
+				//initShareIntent();
+				if(!bShareClick)
+				{
+					pd = ProgressDialog.show(ExcerptEditActivity.this, "", getString(R.string.link_mess));
+					shareExcerp();
+				}
 				break;
 
 			default:
@@ -490,6 +601,7 @@ public class ExcerptEditActivity extends BaseActivity
 				paramJson.put("summary", "");
 				paramJson.put("content", contentValue);
 				String params = paramJson.toString();
+				Log.d(TAG, "!!!!!!! add file json string is " + params);
 				String responce = HttpClientHelper.sendPostRequest(url, params);
 
 				Bundle mBundle = new Bundle();
@@ -550,7 +662,60 @@ public class ExcerptEditActivity extends BaseActivity
 			}
 		};
 	};
-	
+
+
+	private void shareExcerp()
+	{
+		String titleStr = title.getText().toString();
+		String contentStr = content.getText().toString();
+		if (null == contentStr)
+		{
+			Log.d(TAG, "content is null");
+			return;
+		}
+		bShareClick = true;
+		HvnCloudManager hvnCloud = new HvnCloudManager();
+		try
+		{
+			hvnCloud.WriteFileForShareSelect(titleStr, contentStr);
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+
+		UploadFilesToHvnCloudForShare();
+	}
+
+	public void UploadFilesToHvnCloudForShare()
+	{
+		new Thread()
+		{
+			@Override
+			public void run()
+			{
+				String result = null;
+				HvnCloudManager hvnCloud = new HvnCloudManager();
+				result = hvnCloud.ShareForSelect();
+				Log.i(TAG, result);
+
+				if (result == null)
+				{
+					Message msg = new Message();
+					msg.what = UPLLOAD_FILE_CLOUD_FAIL;
+					handler.sendMessage(msg);
+				}
+				else
+				{
+					strLinkPath = result;
+					Message msg = new Message();
+					msg.what = UPLLOAD_FILE_CLOUD_SUCCESS;
+					handler.sendMessage(msg);
+				}
+			}
+		}.start();
+	}
+
 	private void initShareIntent() {
 		// 一般分享
 		Intent intent = new Intent(Intent.ACTION_SEND);

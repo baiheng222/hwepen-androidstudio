@@ -56,7 +56,7 @@ public class RecordingActivity extends BaseActivity implements OnRefreshListener
 	
 	private Context mContext;
 	private ImageView back;
-	private ImageView mPopup;
+	private ImageView mSync;
 	private PopupView mPopupView;
 	private AutoListView listView;
 	private ImageView refresh_progress; // 刷新的图片
@@ -97,7 +97,7 @@ public class RecordingActivity extends BaseActivity implements OnRefreshListener
 	{
 		mContext = RecordingActivity.this;
 		back = (ImageView) findViewById(R.id.recording_back);
-		mPopup = (ImageView) findViewById(R.id.recording_more);
+		mSync = (ImageView) findViewById(R.id.recording_sync);
 		listView = (AutoListView) findViewById(R.id.recording_list);
 		refresh_progress = (ImageView) findViewById(R.id.recording_refresh_progress);
 		anim = (AnimationDrawable) refresh_progress.getBackground();
@@ -105,7 +105,7 @@ public class RecordingActivity extends BaseActivity implements OnRefreshListener
 		listView.setOnRefreshListener(this);
 		listView.setOnLoadListener(this);
 		back.setOnClickListener(listener);
-		mPopup.setOnClickListener(listener);
+		mSync.setOnClickListener(listener);
 		
 		files = SplashActivity.dbManager.file_queryByUserAndType(MainActivity.curUserId, FileType.RECORDING.getValue());
 		setAdapterData(files);
@@ -191,8 +191,8 @@ public class RecordingActivity extends BaseActivity implements OnRefreshListener
 				finish();
 				break;
 				
-			case R.id.recording_more:
-				mPopupView.show(mPopup);
+			case R.id.recording_sync:
+				//mPopupView.show(mPopup);
 				break;
 
 			default:

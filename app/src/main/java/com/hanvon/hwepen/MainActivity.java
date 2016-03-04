@@ -109,7 +109,7 @@ public class MainActivity extends BaseActivity implements OnClickListener
 			@Override
 			public void onClick(View arg0)
 			{
-				if (StringUtil.isEmpty(SplashActivity.userId))
+				//if (StringUtil.isEmpty(SplashActivity.userId))
 				//if (HanvonApplication.hvnName.equals(""))
 				if (0 == loginStatus)
 				{ //登录验证异常重新登录
@@ -117,6 +117,11 @@ public class MainActivity extends BaseActivity implements OnClickListener
 					startActivity(new Intent(getApplication(), LoginActivity.class));
 					finish();
 				}
+				else
+				{
+					startActivity(new Intent(MainActivity.this, ExcerptActivity.class));
+				}
+				/*
 				else if (!(new ConnectionDetector(MainActivity.this).isConnectingTOInternet()))
 				//else if (SplashActivity.userId.equals(DevCons.LOCAL))
 				{ //登录验证超时（无网络） 使用本地数据
@@ -129,6 +134,7 @@ public class MainActivity extends BaseActivity implements OnClickListener
 					curUserId = SplashActivity.userId;
 					startActivity(new Intent(MainActivity.this, ExcerptActivity.class));
 				}
+				*/
 			}
 		});
 		
@@ -137,12 +143,18 @@ public class MainActivity extends BaseActivity implements OnClickListener
 			@Override
 			public void onClick(View v)
 			{
-				if (StringUtil.isEmpty(SplashActivity.userId))
+				//if (StringUtil.isEmpty(SplashActivity.userId))
+				if (0 == loginStatus)
 				{ //登录验证异常重新登录
 					Toast.makeText(getApplication(), "登录验证超时或异常，请重新登录", Toast.LENGTH_LONG).show();
 					startActivity(new Intent(getApplication(), LoginActivity.class));
 					finish();
 				}
+				else
+				{
+					startActivity(new Intent(MainActivity.this, RecordingActivity.class));
+				}
+				/*
 				else if (SplashActivity.userId.equals(DevCons.LOCAL))
 				{ //登录验证超时（无网络） 使用本地数据
 					curUserId = SplashActivity.lastUser.getUserId();
@@ -153,6 +165,7 @@ public class MainActivity extends BaseActivity implements OnClickListener
 					curUserId = SplashActivity.userId;
 					startActivity(new Intent(MainActivity.this, RecordingActivity.class));
 				}
+				*/
 			}
 		});
 		
@@ -198,10 +211,12 @@ public class MainActivity extends BaseActivity implements OnClickListener
 	}
 	*/
 
+
 	@Override
 	protected void onStart()
 	{
 		super.onStart();
+		/*
 		if (!HanvonApplication.hvnName.equals(""))
 		{
 			LogUtil.i("---------MAIN---true---------------------");
@@ -221,11 +236,46 @@ public class MainActivity extends BaseActivity implements OnClickListener
 				mIvLogin.setImageDrawable((getResources().getDrawable(R.drawable.logicon)));
 			}
 		}
+
+		Log.d(TAG, "!!!!! onstart !!!!! MainActivity.curUserId is " + MainActivity.curUserId);
+		*/
 	}
 
 	@Override
-	protected void onResume() {
+	protected void onResume()
+	{
 		super.onResume();
+		Log.d(TAG, " !!! onResume");
+
+		ShowUserInfo();
+
+		/*
+		String hvnname = "";
+		String username = "";
+
+		SharedPreferences mSharedPreferences = this.getSharedPreferences("BitMapUrl", Activity.MODE_MULTI_PROCESS);
+		int flag = mSharedPreferences.getInt("flag", 0);
+		loginStatus = mSharedPreferences.getInt("status", 0);
+
+		curUserId = mSharedPreferences.getString("username", "");
+		*/
+		/*
+		if (flag == 0)
+		{
+			username = mSharedPreferences.getString("username", "");
+			curUserId = username;
+		}
+		else
+		{
+			hvnname = mSharedPreferences.getString("username", "");
+			curUserId = username;
+		}
+		*/
+
+		Log.d(TAG, "!!!! onresume , !!!!MainActivity.curUserId is " + MainActivity.curUserId);
+
+
+
 	}
 	
 	@Override
@@ -356,7 +406,7 @@ public class MainActivity extends BaseActivity implements OnClickListener
 			e.printStackTrace();
 		}
 
-		ShowUserInfo();
+		//ShowUserInfo();
 	}
 
 	@Override
@@ -424,19 +474,26 @@ public class MainActivity extends BaseActivity implements OnClickListener
 		HanvonApplication.isActivity = mSharedPreferences.getBoolean("isActivity", false);
 		String nickname = mSharedPreferences.getString("nickname", "");
 		boolean isHasNick = mSharedPreferences.getBoolean("isHasNick", true);
+
+		Log.d(TAG, "!!!! showuserinfo , !!!!MainActivity.curUserId is " + MainActivity.curUserId);
+
 		if (flag == 0)
 		{
 			//    email = mSharedPreferences.getString("email", "");
 			//    phone = mSharedPreferences.getString("phone", "");
 			username = mSharedPreferences.getString("username", "");
+			curUserId = username;
 		}
 		else
 		{
 			figureurl = mSharedPreferences.getString("figureurl", "");
 			hvnname = mSharedPreferences.getString("username", "");
+			curUserId = username;
 		}
 
 		mUserName = hvnname;
+
+		Log.d(TAG, "!!!! showuserinfo , !!!!MainActivity.curUserId is " + MainActivity.curUserId);
 
 		int status = mSharedPreferences.getInt("status", 0);
 		loginStatus = status;

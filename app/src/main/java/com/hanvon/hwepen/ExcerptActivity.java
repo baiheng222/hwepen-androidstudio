@@ -743,13 +743,15 @@ public class ExcerptActivity extends BaseActivity implements OnRefreshListener, 
 						if (responceJson.get("code").equals("0")) {
 							files = JsonUtil.FileJsonParse(responceJson.getJSONArray("list"));
 							//添加到数据库 并 保存文件
-							for (FileInfo f : files) {
+							for (FileInfo f : files)
+							{
 								f.setUserId(MainActivity.curUserId);
 								f.setType(FileType.EXCERPT.getValue());
 								f.setSyn("0");
 								String path = "/hanvonepen/excerpt/" + MainActivity.curUserId + "/" + f.getFuuid() + ".dat";
 								f.setPath(path);
-								if (!StringUtil.isEmpty(f.getContent())) {
+								if (!StringUtil.isEmpty(f.getContent()))
+								{
 									if (FileUtil.fileExist(path)) {
 										FileUtil.delFile(path);
 										FileUtil.createSDFile(path);

@@ -78,7 +78,7 @@ public class HanvonApplication extends FrontiaApplication {
 
 	public static Tencent mTencent;
 	public static IWXAPI api;
-	private String QQ_APPID = "1104705079";
+	private String QQ_APPID = "1104980603";
 	private JSONObject obj;
 	private String City;
 	public static  String mWeather;
@@ -96,11 +96,13 @@ public class HanvonApplication extends FrontiaApplication {
 
 		super.onCreate();
 		ShareSDK.initSDK(this);
+		/* add by fjm
 		mLocationClient = new LocationClient(getApplicationContext());
 		myListener = new MyLocationListener();
 		mLocationClient.registerLocationListener(myListener);
 		InitLocation();
 		mLocationClient.start();
+		*/
 //		netState = NetWorkHelper.getNetState(getApplicationContext());
 //		Frontia.init(this.getApplicationContext(), Configs.APIKEY);
 		//BluetoothService.startService(this);
@@ -111,8 +113,8 @@ public class HanvonApplication extends FrontiaApplication {
 //		 */
 //		JPushInterface.init(this.getApplicationContext());
 //		JPushInterface.setDebugMode(true);		
-		api = WXAPIFactory.createWXAPI(this, "wxdf64ce17dae09860", true);
-		api.registerApp("wxdf64ce17dae09860");	
+		api = WXAPIFactory.createWXAPI(this, "wx6a447bf09c1faacf", true);
+		api.registerApp("wx6a447bf09c1faacf");
 
 		mTencent = Tencent.createInstance(QQ_APPID, HanvonApplication.this);
 //		removeTempFromPref();

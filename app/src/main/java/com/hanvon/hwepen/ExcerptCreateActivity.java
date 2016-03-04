@@ -32,7 +32,6 @@ import java.io.IOException;
 
 public class ExcerptCreateActivity extends BaseActivity
 {
-	
 	private ImageView back;
 	private ImageView home;
 	private EditText title;
@@ -78,6 +77,7 @@ public class ExcerptCreateActivity extends BaseActivity
 		finish.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
+				Log.d(TAG, "finish clicked !!!!!!!!");
 				titleValue = title.getText().toString();
 				contentValue = content.getText().toString();
 				if (titleValue.equals("") && contentValue.equals("")) {
@@ -180,12 +180,14 @@ public class ExcerptCreateActivity extends BaseActivity
 				paramJson.put("sid", "");
 				paramJson.put("uid", "");
 				paramJson.put("ver", "");
-				paramJson.put("userid", userInfo.getUserId());
+				//paramJson.put("userid", userInfo.getUserId());
+				paramJson.put("userid", MainActivity.curUserId);
 				paramJson.put("ftype", FileType.EXCERPT.getValue());
 				paramJson.put("title", title);
 				paramJson.put("summary", "");
 				paramJson.put("content", content);
 				String params = paramJson.toString();
+				Log.d(TAG, "!!!!!!! add file json string is " + params);
 				String responce = HttpClientHelper.sendPostRequest(url, params);
 				
 				Bundle mBundle = new Bundle();
@@ -245,7 +247,8 @@ public class ExcerptCreateActivity extends BaseActivity
 						Toast.makeText(ExcerptCreateActivity.this, "保存" + titleValue + "成功！", Toast.LENGTH_SHORT).show();
 						
 						//新建成功后保存到手机
-						String path = "/hwepen/excerpt/" + userInfo.getUserId() + "/" + responceJson.getString("fuid") + ".dat";//通过length判断文件是否有更新
+						//String path = "/hwepen/excerpt/" + userInfo.getUserId() + "/" + responceJson.getString("fuid") + ".dat";//通过length判断文件是否有更新
+						String path = "/hwepen/excerpt/" + MainActivity.curUserId + "/" + responceJson.getString("fuid") + ".dat";//通过length判断文件是否有更新
 						if (FileUtil.fileExist(path)) {
 							FileUtil.delFile(path);
 							FileUtil.createSDFile(path);
@@ -257,7 +260,8 @@ public class ExcerptCreateActivity extends BaseActivity
 						Log.i(TAG, "save file sucessfully");
 						FileInfo f = new FileInfo();
 						f.setFuuid(responceJson.getString("fuid"));
-						f.setUserId(userInfo.getUserId());
+						//f.setUserId(userInfo.getUserId());
+						f.setUserId(MainActivity.curUserId);
 						f.setType(FileType.EXCERPT.getValue());
 						f.setSyn("0");
 						f.setPath(path);

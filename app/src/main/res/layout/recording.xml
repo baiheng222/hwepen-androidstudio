@@ -28,14 +28,14 @@
             android:textSize="20sp" />
 
         <ImageView
-            android:id="@+id/recording_more"
+            android:id="@+id/recording_sync"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:background="@drawable/top_pressed"
             android:clickable="true"
-            android:src="@drawable/top_more" />
+            android:src="@drawable/more_sysn" />
     </RelativeLayout>
     
     <ImageView
