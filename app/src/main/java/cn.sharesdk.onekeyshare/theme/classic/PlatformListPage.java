@@ -8,8 +8,8 @@
 
 package cn.sharesdk.onekeyshare.theme.classic;
 
-import static com.mob.tools.utils.R.getStringRes;
-import static com.mob.tools.utils.R.getBitmapRes;
+import static cn.sharesdk.framework.utils.ShareSDKR.getStringRes;
+import static cn.sharesdk.framework.utils.ShareSDKR.getBitmapRes;
 
 import java.util.ArrayList;
 
@@ -91,13 +91,13 @@ public class PlatformListPage extends PlatformListFakeActivity implements View.O
 		btnCancel = new Button(getContext());
 		btnCancel.setTextColor(0xff3a65ff);
 		btnCancel.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
-		int resId = getStringRes(getContext(), "cancel");
+		int resId = getStringRes(getContext(), "ssdk_oks_cancel");
 		if (resId > 0) {
 			btnCancel.setText(resId);
 		}
 		btnCancel.setPadding(0, 0, 0, com.mob.tools.utils.R.dipToPx(getContext(), 5));
 
-		resId = getBitmapRes(getContext(), "classic_platform_corners_bg");
+		resId = getBitmapRes(getContext(), "ssdk_oks_classic_platform_corners_bg");
 		if(resId > 0){
 			btnCancel.setBackgroundResource(resId);
 		}else {

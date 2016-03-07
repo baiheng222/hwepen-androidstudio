@@ -482,13 +482,13 @@ public class MainActivity extends BaseActivity implements OnClickListener
 			//    email = mSharedPreferences.getString("email", "");
 			//    phone = mSharedPreferences.getString("phone", "");
 			username = mSharedPreferences.getString("username", "");
-			curUserId = username;
+			//curUserId = username;
 		}
 		else
 		{
 			figureurl = mSharedPreferences.getString("figureurl", "");
 			hvnname = mSharedPreferences.getString("username", "");
-			curUserId = username;
+			//curUserId = username;
 		}
 
 		mUserName = hvnname;
@@ -521,6 +521,8 @@ public class MainActivity extends BaseActivity implements OnClickListener
 					mIvLogin.setBackgroundResource(R.drawable.login_head_default);
 					LogUtil.i("hvnName:"+username+"  strName:"+nickname);
 				}
+
+				curUserId = username;
 			}
 			if (flag == 1 || flag == 2) //第三方登录，qq, 微信
 			{
@@ -538,6 +540,8 @@ public class MainActivity extends BaseActivity implements OnClickListener
 					HanvonApplication.strName = nickname;
 					HanvonApplication.hvnName = hvnname;
 				}
+
+				curUserId = hvnname;
 				if(!figureurl.isEmpty())
 				{
 					BitmapUtils bitmapUtils = new  BitmapUtils(this);

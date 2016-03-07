@@ -18,6 +18,7 @@ import cn.sharesdk.tencent.qzone.QZone;
 import cn.sharesdk.wechat.friends.Wechat;
 
 import com.hanvon.application.HanvonApplication;
+import com.hanvon.common.ServiceWS;
 import com.hanvon.hwepen.MainActivity;
 import com.hanvon.hwepen.R;
 import com.hanvon.splash.SplashActivity;
@@ -224,7 +225,8 @@ OnClickListener, PlatformActionListener  {
 				paramJson.put("user", strUserName);
 				paramJson.put("pwd", strPassWord);
 				LogUtil.i(paramJson.toString());
-				String responce = HttpClientHelper.sendPostRequest("http://dpi.hanvon.com/rt/ap/v1/user/login", paramJson.toString());
+				//String responce = HttpClientHelper.sendPostRequest("http://dpi.hanvon.com/rt/ap/v1/user/login", paramJson.toString());
+				String responce = HttpClientHelper.sendPostRequest(ServiceWS.LOGIN, paramJson.toString());
 
 				Message message = new Message();
 				Bundle bundle = new Bundle();
@@ -463,10 +465,10 @@ OnClickListener, PlatformActionListener  {
 	
 	
 	
-	private void authorize(Platform plat) {	
-		
-
-		if(plat.isValid()) {
+	private void authorize(Platform plat)
+	{
+		if(plat.isValid())
+		{
 			LogUtil.i("------isValid --11111111-------" + plat.isValid());
 			String userId = plat.getDb().getUserId();
 			if (!TextUtils.isEmpty(userId)) {

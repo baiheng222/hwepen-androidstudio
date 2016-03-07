@@ -129,7 +129,7 @@ public class ExcerptEditActivity extends BaseActivity
 //			 String strContent = etScanContent.getText().toString();
 //			 title = strContent;
 //		 }
-//		 oks.setText(title);
+		 oks.setText(title.getText().toString());
 		// imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
 		String curPath = getApplicationContext().getFilesDir().getPath();
 
@@ -614,28 +614,38 @@ public class ExcerptEditActivity extends BaseActivity
 			}
 		}
 	};
-	Handler createHandler = new Handler() {
+	Handler createHandler = new Handler()
+	{
 		@Override
-		public void handleMessage(Message msg) {
+		public void handleMessage(Message msg)
+		{
 			super.handleMessage(msg);
 			Bundle bundle = msg.getData();
 			String responce = bundle.getString("responce");
-			try {
+			try
+			{
 				pd.dismiss();
-				if (StringUtil.isEmpty(responce)) {
+				if (StringUtil.isEmpty(responce))
+				{
 					Toast.makeText(mContext, "连接服务器超时", Toast.LENGTH_SHORT).show();
-				} else {
+				}
+				else
+				{
 					JSONObject responceJson = new JSONObject(responce);
-					if (responceJson.get("code").equals("0")) {
+					if (responceJson.get("code").equals("0"))
+					{
 						Toast.makeText(mContext, "保存" + titleValue + "成功！", Toast.LENGTH_SHORT).show();
 
 						// 新建成功后保存到手机  创建时间暂时设为手机时间
 						String path = "/hanvonepen/excerpt/" + MainActivity.curUserId + "/" + responceJson.getString("fuid") + ".dat";
-						if (FileUtil.fileExist(path)) {
+						if (FileUtil.fileExist(path))
+						{
 							FileUtil.delFile(path);
 							FileUtil.createSDFile(path);
 							FileUtil.saveTextInSdcard(path, contentValue);
-						} else {
+						}
+						else
+						{
 							FileUtil.createSDFile(path);
 							FileUtil.saveTextInSdcard(path, contentValue);
 						}
@@ -652,7 +662,9 @@ public class ExcerptEditActivity extends BaseActivity
 
 						startActivity(new Intent(mContext, ExcerptActivity.class));
 						finish();
-					} else {
+					}
+					else
+					{
 						Toast.makeText(mContext, "服务不可用，请稍后再试", Toast.LENGTH_SHORT).show();
 					}
 				}

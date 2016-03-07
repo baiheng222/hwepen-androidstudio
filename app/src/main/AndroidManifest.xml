@@ -137,7 +137,7 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" >
             <intent-filter>
-                <data android:scheme="tencent100371282" />
+                <data android:scheme="tencent1104980603" />
 
 
                 <action android:name="android.intent.action.VIEW" />
@@ -149,7 +149,7 @@
 
         <!-- 微信分享回调 -->
         <activity
-            android:name="com.hanvon.wxapi.WXEntryActivity"
+            android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -167,7 +167,7 @@
 则分享结束以后不能得到正确的回调
             -->
             <intent-filter android:priority="1000" >
-                <data android:scheme="tencent100371282" />
+                <data android:scheme="tencent1104980603" />
 
                 <action android:name="android.intent.action.VIEW" />
 

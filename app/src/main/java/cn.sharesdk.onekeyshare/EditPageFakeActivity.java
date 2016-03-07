@@ -8,7 +8,7 @@
 
 package cn.sharesdk.onekeyshare;
 
-import static com.mob.tools.utils.R.getStringRes;
+import static cn.sharesdk.framework.utils.ShareSDKR.getStringRes;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class EditPageFakeActivity extends FakeActivity {
 			return "";
 		}
 
-		int resId = getStringRes(getContext(), platform);
+		int resId = getStringRes(getContext(), "ssdk_" + platform);
 		return getContext().getString(resId);
 	}
 
@@ -164,7 +164,6 @@ public class EditPageFakeActivity extends FakeActivity {
 		}
 
 		new AsyncTask<Object, Void, ImageListResultsCallback>() {
-			@Override
 			protected ImageListResultsCallback doInBackground(Object... objects) {
 				for(ImageInfo imageInfo : shareImageList) {
 					if(imageInfo.bitmap == null) {
@@ -187,7 +186,6 @@ public class EditPageFakeActivity extends FakeActivity {
 				return (ImageListResultsCallback) objects[0];
 			}
 
-			@Override
 			protected void onPostExecute(ImageListResultsCallback callback1) {
 				callback1.onFinish(shareImageList);
 			}
@@ -231,7 +229,7 @@ public class EditPageFakeActivity extends FakeActivity {
 					param.put("address", toFriendList.get(toFriendList.size() - 1));
 				}
 				if(param.get("address") == null) {
-					int resId = getStringRes(activity, "select_a_friend");
+					int resId = getStringRes(activity, "ssdk_oks_select_a_friend");
 					if (resId > 0) {
 						Toast.makeText(getContext(), activity.getString(resId) + " - " + platform.getName(), Toast.LENGTH_SHORT).show();
 					}

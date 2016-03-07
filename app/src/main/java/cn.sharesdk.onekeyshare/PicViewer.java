@@ -14,12 +14,12 @@ import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.graphics.RectF;
 import android.util.DisplayMetrics;
-import android.util.FloatMath;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
+
 import com.mob.tools.FakeActivity;
 
 /** 查看编辑页面中图片的例子 */
@@ -203,7 +203,6 @@ public class PicViewer extends FakeActivity implements OnTouchListener {
 	private float spacing(MotionEvent event) {
         float x = event.getX(0) - event.getX(1);
         float y = event.getY(0) - event.getY(1);
-        //return FloatMath.sqrt(x * x + y * y);
         return (float)Math.sqrt(x * x + y * y);
     }
 

@@ -71,7 +71,7 @@
         AppKey="801307650"
         AppSecret="ae36f4ee3946e1cbb98d6965b0b2ff5c"
         RedirectUri="http://sharesdk.cn"
-        Enable="false" />
+        Enable="true" />
 
     <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
     <QZone
@@ -105,7 +105,7 @@
     <WechatMoments
         Id="5"
         SortId="5"
-        AppId="wx6a447bf09c1faacf"
+		AppId="wx6a447bf09c1faacf"
         AppSecret="9dd90126c6724bf0446dd75ca7897a9c"
         BypassApproval="false"
         Enable="true" />
@@ -113,7 +113,7 @@
 	<WechatFavorite
         Id="6"
         SortId="6"
-        AppId="wx6a447bf09c1faacf"
+		AppId="wx6a447bf09c1faacf"
         AppSecret="9dd90126c6724bf0446dd75ca7897a9c"
         Enable="true" />
     
@@ -121,7 +121,7 @@
 	<QQ
         Id="7"
         SortId="7"
-        AppId="1104980603"
+		AppId="1104980603"
         AppKey="90GyS0UZLi5q1o3t"
         ShareByAppClient="true"
         Enable="true" />
