@@ -81,6 +81,7 @@ public class ExcerptActivity extends BaseActivity implements OnRefreshListener, 
 	
 	private String fuuid;
 	List<FileInfo> files;
+	List<FileInfo> mSearchResult = new ArrayList<FileInfo>();
 	private CategoryAdapter mCategoryAdapter;
 	
 	private static final String TAG = "ExcerptActivity";
@@ -216,7 +217,8 @@ public class ExcerptActivity extends BaseActivity implements OnRefreshListener, 
 					if (new ConnectionDetector(mContext).isConnectingTOInternet()) {
 						closeBoard(mContext);
 						pd = ProgressDialog.show(mContext, "", "正在查询......");
-						new Thread(searchThread).start();
+						//new Thread(searchThread).start();
+						new Thread(localSearchThread).start();
 					} else {
 						Toast.makeText(mContext, "网络连接不可用，请检查网络后再试", Toast.LENGTH_SHORT).show();
 					}
@@ -558,6 +560,105 @@ public class ExcerptActivity extends BaseActivity implements OnRefreshListener, 
 			}
 		}
 	};
+
+	Runnable localSearchThread = new Runnable()
+	{
+		@Override
+		public void run()
+		{
+			String title;
+			String content;
+			//String tmp = null;
+
+			List<FileInfo> allFiles = SplashActivity.dbManager.file_queryAll();
+
+			for (int i = 0; i < allFiles.size(); i++)
+			{
+				Log.d(TAG, i + " of " + allFiles.size() + " files");
+				title = allFiles.get(i).getTitle();
+				content = allFiles.get(i).getContent();
+				/*
+				FileInfo file = SplashActivity.dbManager.file_queryById(files.get(i).getFuuid());
+				try
+				{
+					tmp = FileUtil.loadTextFromSdcard(file.getPath());
+
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+				content = tmp;
+				*/
+				//Log.d(TAG, "!!!! fileinfo content is " + files.get(i).getContent());
+				Log.d(TAG, "!!!!title is " + title);
+				Log.d(TAG, "!!!!content is " + content);
+				Log.d(TAG, " !!!! searchTextValue is" +  searchTextValue);
+
+				if ((title.indexOf(searchTextValue) != -1) || (content.indexOf(searchTextValue) != -1))
+				//if (title.contains(searchTextValue) || content.contains(searchTextValue))
+				{
+					Log.d(TAG, "add a file !!!!");
+					/*
+					FileInfo info = new FileInfo();
+					info.setAccessTime(files.get(i).getAccessTime());
+					info.setContent(files.get(i).getContent());
+					info.setCreateTime(files.get(i).getCreateTime());
+					info.setFuuid(files.get(i).getFuuid());
+					info.setLength(files.get(i).getLength());
+					info.setModifyTime(files.get(i).getModifyTime());
+					info.setPath(files.get(i).getPath());
+					info.setSerVer(files.get(i).getSerVer());
+					info.setSummary(files.get(i).getSummary());
+					info.setSyn(files.get(i).getSyn());
+					info.setTitle(files.get(i).getTitle());
+					info.setFuuid(files.get(i).getFuuid());
+					info.setType(files.get(i).getType());
+					info.setUserId(files.get(i).getUserId());
+					*/
+					mSearchResult.add(allFiles.get(i));
+				}
+
+
+			}
+
+			if (null == mSearchResult)
+			{
+				Log.d(TAG, "no result");
+				pd.dismiss();
+				//Toast.makeText(ExcerptActivity.this, "没有搜索到匹配的内容", Toast.LENGTH_SHORT).show();
+				return;
+			}
+
+			Bundle mBundle = new Bundle();
+			mBundle.putString("responce", "localSearch");
+			Message msg = new Message();
+			msg.setData(mBundle);
+			localSearchHandler.sendMessage(msg);
+		}
+	};
+
+	Handler localSearchHandler = new Handler()
+	{
+		@Override
+		public void handleMessage(Message msg)
+		{
+			super.handleMessage(msg);
+			pd.dismiss();
+			Log.d(TAG, "localSearchHandler here !!!!!!!!!!!1");
+			Bundle bundle = msg.getData();
+			String responce = bundle.getString("responce");
+
+			//List<FileInfo> resultFiles = JsonUtil.FileJsonParse(responceJson.getJSONArray("list"));
+			DevCons.searchFiles = mSearchResult;
+
+			Log.d(TAG, "!!!! resultFile list  size is " + mSearchResult.size());
+
+			DevCons.searching = true;
+			setAdapterData(DevCons.searchFiles);
+			listView.setResultSize(DevCons.searchFiles.size());
+		}
+	};
 	
 	Runnable searchThread = new Runnable() {
 		@Override
@@ -587,8 +688,10 @@ public class ExcerptActivity extends BaseActivity implements OnRefreshListener, 
 				jsonQstr.put("title", "");
 				jsonQstr.put("cnt", searchTextValue);
 				paramJson.put("qstr", jsonQstr);
-				
+				//paramJson.put("conditions", jsonQstr);
+
 				String params = paramJson.toString();
+				Log.d(TAG, "search string " + params);
 				String responce = HttpClientHelper.sendPostRequest(url, params);
 				
 				Bundle mBundle = new Bundle();
@@ -610,33 +713,46 @@ public class ExcerptActivity extends BaseActivity implements OnRefreshListener, 
 			pd.dismiss();
 			Bundle bundle = msg.getData();
 			String responce = bundle.getString("responce");
-			if (null == responce) { // 没有网络连接查询android数据库
+			if (null == responce)
+			{ // 没有网络连接查询android数据库
 				Log.i(TAG, "network is not support");
 				Toast.makeText(ExcerptActivity.this, "网络连接超时", Toast.LENGTH_SHORT).show();
-			} else {
-				try {
+			}
+			else
+			{
+				try
+				{
 					JSONObject responceJson = new JSONObject(responce);
-					if (responceJson.get("code").equals("0")) {
-						if (0 == responceJson.getJSONArray("list").length()) {
+					if (responceJson.get("code").equals("0"))
+					{
+						if (0 == responceJson.getJSONArray("list").length())
+						{
 							Toast.makeText(mContext, "未查询与之相关的内容！", Toast.LENGTH_SHORT).show();
 							return;
 						}
 						List<FileInfo> resultFiles = JsonUtil.FileJsonParse(responceJson.getJSONArray("list"));
 						DevCons.searchFiles = resultFiles;
-						
+
+						Log.d(TAG, "!!!! filelist size is " + resultFiles.size());
+
 						//搜索到的文件可能没有保存到本地
-						for (FileInfo f : resultFiles) {
+						for (FileInfo f : resultFiles)
+						{
 							f.setUserId(MainActivity.curUserId);
 							f.setType(FileType.EXCERPT.getValue());
 							f.setSyn("0");
 							String path = "/hanvonepen/excerpt/" + MainActivity.curUserId + "/" + f.getFuuid() + ".dat";
 							f.setPath(path);
-							if (!StringUtil.isEmpty(f.getContent())) {
-								if (FileUtil.fileExist(path)) {
+							if (!StringUtil.isEmpty(f.getContent()))
+							{
+								if (FileUtil.fileExist(path))
+								{
 									FileUtil.delFile(path);
 									FileUtil.createSDFile(path);
 									FileUtil.saveTextInSdcard(path, f.getContent());
-								} else {
+								}
+								else
+								{
 									FileUtil.createSDFile(path);
 									FileUtil.saveTextInSdcard(path, f.getContent());
 								}
@@ -649,7 +765,9 @@ public class ExcerptActivity extends BaseActivity implements OnRefreshListener, 
 						DevCons.searching = true;
 						setAdapterData(DevCons.searchFiles);
 						listView.setResultSize(DevCons.searchFiles.size());
-					} else {
+					}
+					else
+					{
 						Toast.makeText(mContext, "服务不可用，请稍后再试", Toast.LENGTH_SHORT).show();
 						return;
 					}

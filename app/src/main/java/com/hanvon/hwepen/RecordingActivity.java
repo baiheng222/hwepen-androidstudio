@@ -193,6 +193,16 @@ public class RecordingActivity extends BaseActivity implements OnRefreshListener
 				
 			case R.id.recording_sync:
 				//mPopupView.show(mPopup);
+				if (new ConnectionDetector(mContext).isConnectingTOInternet())
+				{
+					refreshStart();
+					loadData(AutoListView.REFRESH);
+				}
+				else
+				{
+					Toast.makeText(mContext, "网络连接不可用，请检查网络后再试", Toast.LENGTH_SHORT).show();
+				}
+
 				break;
 
 			default:
@@ -265,8 +275,10 @@ public class RecordingActivity extends BaseActivity implements OnRefreshListener
 		});
 	}
 	
-	private void setAdapterData(List<FileInfo> files){
-		if (null != files && 0 != files.size()) {
+	private void setAdapterData(List<FileInfo> files)
+	{
+		if (null != files && 0 != files.size())
+		{
 			// ArrayList<Category> listData = getData();
 			Collections.sort(files);
 			ArrayList<Category> listData = ListFileData.listData(removeDuplicate(files));

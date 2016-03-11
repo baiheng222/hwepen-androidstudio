@@ -98,12 +98,12 @@ public class UpdateAppService
     	        InputStream is = conn.getInputStream();
     	        if (updateType == 1)
 				{
-    	        	 File f = new File("/sdcard/"+"SuluPen.apk");
+    	        	 File f = new File("/sdcard/"+"hwepen-android.apk");
     	        	 if (f.exists())
 					 {
     	        		 f.delete();
     	        	 }
-    	        	 file = new File("/sdcard/", "SuluPen.apk");
+    	        	 file = new File("/sdcard/", "hwepen-android.apk");
     	        }
 				else if (updateType == 2)
 				{

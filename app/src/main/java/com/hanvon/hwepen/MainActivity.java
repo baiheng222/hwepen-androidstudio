@@ -451,6 +451,17 @@ public class MainActivity extends BaseActivity implements OnClickListener
 				}
 				*/
 				//	Toast.makeText(this, "此版本暂不支持该功能！", Toast.LENGTH_SHORT).show();
+
+				if (0 == loginStatus)
+				{ //登录验证异常重新登录
+					Toast.makeText(getApplication(), "登录验证超时或异常，请重新登录", Toast.LENGTH_LONG).show();
+					startActivity(new Intent(getApplication(), LoginActivity.class));
+					finish();
+				}
+				else
+				{
+					//startActivity(new Intent(MainActivity.this, ExcerptActivity.class));
+				}
 				break;
 
 			case R.id.btn_leftmenu:

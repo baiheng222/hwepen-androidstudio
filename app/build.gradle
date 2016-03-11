@@ -15,7 +15,7 @@ android {
         minSdkVersion 17
 
         versionCode 1
-        versionName "1.1.7"
+        versionName "1.1.10"
     }
     buildTypes {
         release {

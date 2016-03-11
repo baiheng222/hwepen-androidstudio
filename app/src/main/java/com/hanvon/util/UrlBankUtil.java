@@ -1,12 +1,16 @@
 package com.hanvon.util;
 
+import com.hanvon.common.ServiceWS;
+
 public class UrlBankUtil
 {
 	// 服务器对应ip地址:61.135.185.83
 	private static String ip = "http://hanwang.duapp.com:80";
-	private static String ipHanvon = "http://dpi.hanvon.com/";
-//	private static String HanvanApkIp = "http://cloud.hwyun.com/dws-cloud/rt/ap/v1";
-	private static String HanvanApkIp = "http://dpi.hanvon.com/rt/ap/v1";
+	//private static String ipHanvon = "http://dpi.hanvon.com/";
+	private static String ipHanvon = ServiceWS.IPADDRESS;
+	//	private static String HanvanApkIp = "http://cloud.hwyun.com/dws-cloud/rt/ap/v1";
+	//private static String HanvanApkIp = "http://dpi.hanvon.com/rt/ap/v1";
+	private static String HanvanApkIp = ipHanvon + "/rt/ap/v1";
 	// 本地IP地址
 	// public static String UrlRootPath="http://192.168.133.45:8080";
 	private static String baiduTranslateIp = "http://openapi.baidu.com/public/2.0/bmt/translate";

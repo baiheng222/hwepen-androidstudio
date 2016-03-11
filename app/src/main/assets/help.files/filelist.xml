@@ -1,5 +1,5 @@
 <xml xmlns:o="urn:schemas-microsoft-com:office:office">
- <o:MainFile HRef="../云记忆IOS帮助手册_20160301_V1.htm"/>
+ <o:MainFile HRef="../Android云记忆帮助手册_20160310_V1.htm"/>
  <o:File HRef="preview.wmf"/>
  <o:File HRef="item0001.xml"/>
  <o:File HRef="props0002.xml"/>
@@ -18,17 +18,19 @@
  <o:File HRef="image011.jpg"/>
  <o:File HRef="image012.png"/>
  <o:File HRef="image013.jpg"/>
- <o:File HRef="image014.png"/>
- <o:File HRef="image015.gif"/>
- <o:File HRef="image016.png"/>
- <o:File HRef="image017.jpg"/>
- <o:File HRef="image018.png"/>
- <o:File HRef="image019.jpg"/>
- <o:File HRef="image020.png"/>
- <o:File HRef="image021.jpg"/>
- <o:File HRef="image022.png"/>
- <o:File HRef="image023.gif"/>
- <o:File HRef="image024.jpg"/>
+ <o:File HRef="image014.jpg"/>
+ <o:File HRef="image015.png"/>
+ <o:File HRef="image016.gif"/>
+ <o:File HRef="image017.png"/>
+ <o:File HRef="image018.jpg"/>
+ <o:File HRef="image019.png"/>
+ <o:File HRef="image020.jpg"/>
+ <o:File HRef="image021.png"/>
+ <o:File HRef="image022.jpg"/>
+ <o:File HRef="image023.png"/>
+ <o:File HRef="image024.gif"/>
+ <o:File HRef="image025.jpg"/>
+ <o:File HRef="image026.jpg"/>
  <o:File HRef="header.htm"/>
  <o:File HRef="filelist.xml"/>
 </xml>

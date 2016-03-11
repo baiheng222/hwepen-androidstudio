@@ -159,7 +159,7 @@ public class SoftUpdate extends Activity implements OnClickListener
   		    e.printStackTrace();
   	    }
 
-  	    //LogUtil.i(JSuserInfoJson.toString());
+  	    Log.i(TAG, JSuserInfoJson.toString());
   	    RequestResult result = new RequestResult();
   	    result = RequestServerData.softUpdate(JSuserInfoJson);
 

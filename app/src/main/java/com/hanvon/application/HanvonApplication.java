@@ -140,8 +140,9 @@ public class HanvonApplication extends FrontiaApplication {
 		}
 		AppVer = packInfo.versionName;
 		//获取设备sn号
-		TelephonyManager telephonyManager = (TelephonyManager)this.getSystemService( this.getApplicationContext().TELEPHONY_SERVICE);
-		AppDeviceId =  telephonyManager.getSimSerialNumber();
+		GetDevicedUniqueId();
+		//TelephonyManager telephonyManager = (TelephonyManager)this.getSystemService( this.getApplicationContext().TELEPHONY_SERVICE);
+		//AppDeviceId =  telephonyManager.getSimSerialNumber();
 		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 	//	SharedPreferences sharedPref=getSharedPreferences("Blue", Activity.MODE_MULTI_PROCESS);
 		//BluetoothSetting.getInstance(sharedPref);
@@ -260,6 +261,35 @@ public class HanvonApplication extends FrontiaApplication {
 	public void setAddrDetail(String addrDetail) {
 		this.addrDetail = addrDetail;
 	}
+
+public void GetDevicedUniqueId(){
+		TelephonyManager telephonyManager = (TelephonyManager)this.getSystemService( this.getApplicationContext().TELEPHONY_SERVICE);
+		AppDeviceId =  telephonyManager.getSimSerialNumber();
+		if (null == AppDeviceId){
+			AppDeviceId = telephonyManager.getDeviceId();
+		}else{
+			return;
+		}
+		if(null == AppDeviceId){
+			AppDeviceId = android.os.Build.SERIAL;
+		}else{
+			return;
+		}
+
+		if (null == AppDeviceId){
+			AppDeviceId = android.provider.Settings.System.getString(getContentResolver(), android.provider.Settings.System.ANDROID_ID);
+		}else{
+			return;
+		}
+
+		if(null == AppDeviceId){
+			AppDeviceId = "9774d56d682e549cSulu";
+		}else{
+			return;
+		}
+
+	}
+
 	/*
 	public void GetFirstWeather(String City){
 		URL url1, url2;

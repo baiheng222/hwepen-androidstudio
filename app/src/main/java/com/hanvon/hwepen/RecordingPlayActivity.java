@@ -239,7 +239,8 @@ public class RecordingPlayActivity extends BaseActivity
 			filePath = file.getPath();
 		}
 		
-		topTime.setText(file.getCreateTime());
+		//topTime.setText(file.getCreateTime());
+		topTime.setText(file.getTitle());
 		size.setText(FileUtil.getFormatSize(Double.parseDouble(file.getLength())));
 		
 		//处理录音备注
